@@ -1,0 +1,101 @@
+<div class="container ">
+
+<div class="col-md-6 mx-auto shadow p-3 mb-5 bg-body rounded">
+
+  <h2>Sign up</h2>
+  <p>Take a momenet to create a account with us</p><hr>
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+          <div class="row">
+           <div class="col">
+             <%= f.label :FirstName %><br />
+             <%= f.text_field :first_name, autofocus: true, autocomplete: "first_name", class: "form-control"%>
+          <span class="text-danger"><%= f.object.errors[:first_name][0] if f.object.errors.any? %></span>
+           </div>
+            <div class="col">
+
+              <%= f.label :LastName %><br />
+              <%= f.text_field :last_name, autofocus: true, autocomplete: "LastName", class: "form-control" %>
+               <span class="text-danger"><%= f.object.errors[:last_name][0] if f.object.errors.any? %></span>
+             </div>
+
+          </div>
+
+      <div class="row">
+
+        <div class="col">
+          <%= f.label :email%><br />
+          <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %>
+           <span class="text-danger"><%= f.object.errors[:email][0] if f.object.errors.any? %></span>
+        </div>
+        <div class="col">
+          <%= f.label :Country%><br />
+          <%= f.text_field :country, autofocus: true, autocomplete: "Country", class: "form-control" %>
+           <span class="text-danger"><%= f.object.errors[:country][0] if f.object.errors.any? %></span>
+        </div>
+
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <%= f.label :PhoneNumber %><br />
+          <%= f.text_field :phone_number, autofocus: true, autocomplete: "PhoneNumber", class: "form-control" %>
+           <span class="text-danger"><%= f.object.errors[:phone_number][0] if f.object.errors.any? %></span>
+
+        </div>
+         <div class="col">
+          <%= f.label :Type %><br />
+          <select class="form-control" id="selecthere">
+          <option>Client</option>
+          <option>Admin</option>
+          <option>SuperAdmin</option>
+          </select>
+           <span class="text-danger"><%= f.object.errors[:type][0] if f.object.errors.any? %></span>
+
+        </div>
+
+        <div class="form-group">
+  <label for="exampleFormControlSelect1">Example select</label>
+
+</div>
+
+
+
+      </div>
+      <div class="row">
+        <div class="col">
+          <%= f.label :password %>
+          <% if @minimum_password_length %>
+          <em>(<%= @minimum_password_length %> characters minimum)</em>
+          <% end %><br />
+          <%= f.password_field :password, autocomplete: "new-password", class: "form-control" %>
+           <span class="text-danger"><%= f.object.errors[:password][0] if f.object.errors.any? %></span>
+        </div>
+
+        <div class="col">
+          <%= f.label :password_confirmation %><br />
+          <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control" %>
+           <span class="text-danger"><%= f.object.errors[:password_confirmation][0] if f.object.errors.any? %></span>
+        </div>
+      </div>
+      <p>By voluntarily registering on this site, you consent to:
+          (i) the collection, use and disclosure by the XYZ Institutions of your personal information, including your personal health information for the purposes of: (a) institutional planning to assist with the creation (b) notification and/or delivery of other programs and services (c) statistical analysis necessary to further assist  (d) planning of or response to a natural disaster or other event deemed to be an emergency (collectively, the "Purposes"); and (ii) being contacted by the XYZ Institutions for reasons related to the Purposes. For more information please review our<a href=" https://ge-stage-2019.herokuapp.com/privacy_policy">Privacy|Policy</a></p>
+      <%= check_box_tag(:i_agree) %>
+      <%= label_tag(:i_agree, "I agree") %><br />
+      <%= check_box_tag :not_agree, " ",false, :onclick => "if (this.click) { alert('contact Admin at xyz@projectname.com'); }" %>
+      <%= label_tag(:not_agree, "I don't agree") %>
+
+      <div class="row">
+
+      <div class="col">
+        <%= f.submit "Sign up" %>
+      </div>
+      </div>
+
+    <% end %>
+      <%= render "users/shared/links" %>
+    </div>
+
+
+
+ </div>
+
