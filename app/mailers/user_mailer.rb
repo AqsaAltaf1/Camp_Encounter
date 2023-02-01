@@ -1,13 +1,15 @@
-class UserMailer < ApplicationMailer
+# frozen_string_literal: true
 
+# style
+class UserMailer < ApplicationMailer
   # Subject can be set in your I18n file at config/locales/en.yml
   # with the following lookup:
   #
   #   en.user_mailer.welcome_email.subject
   #
   def welcome_email
-    @greeting = "Hi"
+    @greeting = 'Hi'
 
-    mail to: "user@gmail.com", Subject: "mail"
+    mail to: 'user@gmail.com', Subject: 'mail'
   end
 end

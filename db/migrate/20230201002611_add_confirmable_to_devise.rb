@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# Style/Documentation
 class AddConfirmableToDevise < ActiveRecord::Migration[5.2]
   def up
     # User.reset_column_information # Need for some types of updates, but not for update_all.
