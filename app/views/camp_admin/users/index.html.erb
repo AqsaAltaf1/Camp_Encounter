@@ -1,3 +1,14 @@
+<%# <%= form_tag "/camp_admin_user", method: "GET" do %>
+  <%# <%= label_tag :search_by_first_name %>
+  <%# <%= text_field_tag :search_by_first_name,first_name: :q, params[:search_by_first_name] %>
+<%# <% end %>
+
+<%= form_tag(camp_admin_users_path, method: "get") do %>
+  <%= label_tag(:q, "Search for:") %>
+  <%= text_field_tag(:q) %>
+  <%= submit_tag("Search") %>
+<% end %>
+
 <h1>User data</h1>
 
 <table>
