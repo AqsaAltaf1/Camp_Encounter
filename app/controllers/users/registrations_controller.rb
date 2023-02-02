@@ -6,7 +6,7 @@ module Users
     # before_action :configure_sign_up_params, only: [:create]
     # before_action :configure_account_update_params, only: [:update]
 
-    before_action :configure_permitted_parameters, if: :devise_controller?
+    before_action :configure_permitted_parameters
 
     # GET /resource/sign_up
     # def new
@@ -45,6 +45,7 @@ module Users
     protected
 
     def configure_permitted_parameters
+      byebug
       devise_parameter_sanitizer.permit(:sign_up,
                                         keys: %i[first_name last_name type country phone_number email password
                                                  password_confirmation])

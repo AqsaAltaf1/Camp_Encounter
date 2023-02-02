@@ -15,3 +15,11 @@ Admin.first_or_create(email: ' admin@projectname.com') do |user|
   user.phone_number = '03194773106'
   user.password = 'Password123!@#'
 end
+
+SuperAdmin.first_or_create(email: ' Superadmin@projectname.com') do |user|
+  user.first_name = 'admin'
+  user.last_name = 'campencounter'
+  user.country = 'pakistan'
+  user.phone_number = '03194773106'
+  user.password = 'Abcd123!@#'
+end
