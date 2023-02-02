@@ -9,8 +9,6 @@ Rails.application.routes.draw do
     passwords: 'users/passwords'
   }
 
-
-
   namespace :camp_admin do
     resources :users do
     end
