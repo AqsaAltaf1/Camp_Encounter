@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 # user
-class UsersController < ApplicationController
+class Admin::UsersController < ApplicationController
   def edit
     @user = User.find(params[:id])
   end
@@ -14,7 +14,9 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
-  def hide; end
+  def hide
+
+  end
 
   def update
     @user = User.find(params[:id])
@@ -28,8 +30,9 @@ class UsersController < ApplicationController
 
   def destroy
     @user = User.find(params[:id])
-    @user.destroy
 
-    redirect_to destroy_admin_user_path
+    if @user.destroy
+      redirect_to admin_users_path
+    end
   end
 end

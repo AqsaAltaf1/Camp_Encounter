@@ -1,7 +1,7 @@
 <h1>User data</h1>
 
 <table>
-    <thead>
+  <thead>
     <tr>
         <th>User ID</th>
         <th>FirstName</th>
@@ -10,21 +10,21 @@
         <th>Phone</th>
         <th  colspan="3">Actions</th>
     </tr>
-    </thead>
-    <tbody>
+  </thead>
+  <tbody>
     <% @users.each do |user| %>
         <tr>
-            <td><%= user.id%></td>
-            <td><%= user.first_name %></td>
-            <td><%= user.email %></td>
-            <td><%= user.country %></td>
-            <td><%= user.phone_number %></td>
-            <td><%= link_to 'View', new_admin_user_path(user) %></td>
-            <td><%= link_to 'Edit', edit_admin_user_path(user) %></td>
-            <td><%= link_to 'Destroy', admin_user_path(user),method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <td><%= user.id%></td>
+          <td><%= user.first_name %></td>
+          <td><%= user.email %></td>
+          <td><%= user.country %></td>
+          <td><%= user.phone_number %></td>
+          <td><%= link_to 'View', admin_user_path(user) %></td>
+          <td><%= link_to 'Edit', edit_admin_user_path(user) %></td>
+          <td><%= link_to 'Destroy', admin_user_path(user), data: { confirm: 'Are you sure?' }, method: :delete %></td>
         </tr>
     <% end %>
-    </tbody>
+  </tbody>
 </table>
 
 
