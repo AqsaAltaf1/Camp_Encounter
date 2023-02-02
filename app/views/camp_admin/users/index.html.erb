@@ -3,28 +3,26 @@
 <table>
   <thead>
     <tr>
-        <th>User ID</th>
-        <th>FirstName</th>
-        <th>Email</th>
-        <th>Country</th>
-        <th>Phone</th>
-        <th  colspan="3">Actions</th>
+      <th>User ID</th>
+      <th>FirstName</th>
+      <th>Email</th>
+      <th>Country</th>
+      <th>Phone</th>
+      <th  colspan="3">Actions</th>
     </tr>
   </thead>
   <tbody>
     <% @users.each do |user| %>
-        <tr>
-          <td><%= user.id%></td>
-          <td><%= user.first_name %></td>
-          <td><%= user.email %></td>
-          <td><%= user.country %></td>
-          <td><%= user.phone_number %></td>
-          <td><%= link_to 'View', camp_admin_user_path(user) %></td>
-          <td><%= link_to 'Edit', edit_camp_admin_user_path(user) %></td>
-          <td><%= link_to 'Destroy', camp_admin_user_path(user), data: { confirm: 'Are you sure?' }, method: :delete %></td>
-        </tr>
+      <tr>
+        <td><%= user.id%></td>
+        <td><%= user.first_name %></td>
+        <td><%= user.email %></td>
+        <td><%= user.country %></td>
+        <td><%= user.phone_number %></td>
+        <td><%= link_to 'View', camp_admin_user_path(user) %></td>
+        <td><%= link_to 'Edit', edit_camp_admin_user_path(user) %></td>
+        <td><%= link_to 'Destroy', camp_admin_user_path(user), data: { confirm: 'Are you sure?' }, method: :delete %></td>
+      </tr>
     <% end %>
   </tbody>
 </table>
-
-
