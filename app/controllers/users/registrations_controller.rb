@@ -45,7 +45,6 @@ module Users
     protected
 
     def configure_permitted_parameters
-      byebug
       devise_parameter_sanitizer.permit(:sign_up,
                                         keys: %i[first_name last_name type country phone_number email password
                                                  password_confirmation])

@@ -1,6 +1,7 @@
-# Style/Documentation
+# frozen_string_literal: true
 
-class Admin::UsersController < ApplicationController
+# user
+class UsersController < ApplicationController
   def edit
     @user = User.find(params[:id])
   end
