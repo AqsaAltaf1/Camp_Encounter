@@ -67,5 +67,5 @@ gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
 gem 'bootstrap', '~> 5.2.2'
 gem 'jquery-rails'
-gem 'letter_opener', group: :development
 gem 'kaminari'
+gem 'letter_opener', group: :development

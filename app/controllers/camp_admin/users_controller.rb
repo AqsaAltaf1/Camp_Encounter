@@ -9,10 +9,10 @@ module CampAdmin
 
     def index
       @users = User.all.page(params[:page])
-      if params[:q].present?
-        @users = User.all.where("first_name LIKE ? OR last_name LIKE ? OR email LIKE ? ",
-          "%#{params[:q]}%", "%#{params[:q]}%","%#{params[:q]}%")
-      end
+      return unless params[:q].present?
+
+      @users = User.all.where('first_name LIKE ? OR last_name LIKE ? OR email LIKE ? ',
+                              "%#{params[:q]}%", "%#{params[:q]}%", "%#{params[:q]}%")
     end
 
     def show; end
