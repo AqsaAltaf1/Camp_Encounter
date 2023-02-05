@@ -2,8 +2,8 @@
 
 # User
 require 'csv'
+# user
 class User < ApplicationRecord
-
   paginates_per 3
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
@@ -17,13 +17,13 @@ class User < ApplicationRecord
     message: 'Password must contain one upercase,one lowercase and one special character' } # rubocop :disable Layout/HashAlignment
 
   def self.to_csv
-    attributes = %w{id first_name last_name email country phone_number type }
+    attributes = %w[id first_name last_name email country phone_number type]
 
     CSV.generate(headers: true) do |csv|
       csv << attributes
 
       all.each do |user|
-        csv << attributes.map{ |attr| user.send(attr) }
+        csv << attributes.map { |attr| user.send(attr) }
       end
     end
   end

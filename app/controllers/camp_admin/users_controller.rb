@@ -3,7 +3,7 @@
 module CampAdmin
   # user
   class UsersController < ApplicationController
-    before_action :set_user, except: %i[index ]
+    before_action :set_user, except: %i[index]
 
     def edit; end
 
@@ -16,9 +16,9 @@ module CampAdmin
 
       respond_to do |format|
         format.html
-        format.csv {
+        format.csv do
           send_data @users.to_csv
-        }
+        end
       end
     end
 
