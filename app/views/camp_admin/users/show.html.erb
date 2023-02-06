@@ -1,26 +1,45 @@
-<div class = 'col-lg-12 col-md-12'>
-<h1>show here</h1>
+<style>
+ul{
+  list-style-type: none;
+}
 
-<table class='table table-striped table-hover'>
-  <thead class='p-3 mb-2 bg-success'>
-    <tr>
-      <th>User ID</th>
-      <th>FirstName</th>
-      <th>Email</th>
-      <th>Country</th>
-      <th>Phone</th>
-    </tr>
-  </thead>
-  <tbody>
-      <tr>
-        <td><%= @user.id%></td>
-        <td><%= @user.first_name %></td>
-        <td><%= @user.email %></td>
-        <td><%= @user.country %></td>
-        <td><%= @user.phone_number %></td>
-      </tr>
-  </tbody>
-</table>
+li{
+  margin-bottom: 20px;
+}
 
-<%= link_to 'Back', camp_admin_users_path %>
+.view{
+  margin-top:20px;
+  margin: 10;
+  display: flex;
+  flex-direction:row;
+  justify-content:space-around;
+}
+
+h3{
+  text-align:center;
+}
+
+</style>
+<div class='container col-md-6 mx-auto shadow p-3 mb-5 bg-body rounded'>
+  <h3>View Here</h3>
+  <div class='view'>
+    <div>
+      <ul class='list1'><li><b>FirstName:</b></li><hr>
+        <li><b>LastName:</b></li><hr>
+        <li><b>Email Address:</b></li><hr>
+        <li><b>Phone Number:</b></li><hr>
+        <li><b>Country:</b></li><hr>
+      </ul>
+    </div>
+
+    <div>
+      <ul class='list2'><li><%= @user.first_name %></li><hr>
+        <li><%= @user.last_name %></li><hr>
+        <li><%= @user.email %></li><hr>
+        <li><%= @user.phone_number %></li><hr>
+        <li><%= @user.country %></li><hr>
+      <ul>
+    </div>
+  </div>
+  <%= link_to 'Back', camp_admin_users_path %>
 </div>
