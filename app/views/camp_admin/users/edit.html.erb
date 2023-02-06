@@ -1,0 +1,33 @@
+<div class="container ">
+  <div class="col-md-6 mx-auto shadow p-3 mb-5 bg-body rounded">
+  <h3>Edit here</h3>
+    <%= form_with(model: @user, url: camp_admin_user_path(@user), method: "patch") do |f| %>
+
+      <div class="field">
+        <%= f.label :FirstName %><br />
+        <%= f.text_field :first_name, autofocus: true, autocomplete: "first_name", class: "form-control"%>
+          <span class="text-danger"><%= f.object.errors[:first_name][0] if f.object.errors.any? %></span>
+      </div>
+      <div class="field">
+        <%= f.label :LastName %><br />
+        <%= f.text_field :last_name, autofocus: true, autocomplete: "LastName", class: "form-control" %>
+        <span class="text-danger"><%= f.object.errors[:last_name][0] if f.object.errors.any? %></span>
+      </div>
+
+      <div class="field">
+        <%= f.label :email%><br />
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %>
+        <span class="text-danger"><%= f.object.errors[:email][0] if f.object.errors.any? %></span>
+      </div>
+      <div class="field">
+        <%= f.label :Country%><br />
+        <%= f.text_field :country, autofocus: true, autocomplete: "Country", class: "form-control" %>
+        <span class="text-danger"><%= f.object.errors[:country][0] if f.object.errors.any? %></span>
+      </div>
+
+      <div class="col">
+        <%= f.submit "Save", class: 'btn btn-success mb-3 btn-md' %>
+      </div>
+    <% end %>
+  </div>
+</div>

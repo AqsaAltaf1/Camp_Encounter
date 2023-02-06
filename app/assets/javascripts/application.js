@@ -18,3 +18,7 @@
 //= require jquery3
 //= require popper
 //= require bootstrap-sprockets
+
+$(document).ready(function () {
+  $("#user_type").addClass("form-select")
+});
