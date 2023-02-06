@@ -3,33 +3,23 @@
 module CampAdmin
   # user
   class UsersController < ApplicationController
-    before_action :set_user, except: %i[index search]
+    before_action :set_user, except: %i[index]
 
     def edit; end
 
     def index
-      @users = if params[:q].present?
-                 User.all.where('first_name like ?', params[:q])
-               else
-                 User.all
-               end
-    end
+      @users =
+        User.all
+            .where('first_name LIKE ? OR last_name LIKE ? OR email LIKE ? ',"%#{params[:q]}%","%#{params[:q]}%", "%#{params[:q]}%")
+            .page(params[:page])
 
-    # def search
-    #    @users =User.where("first_name like ?", "%"+params[:q]+"%")
-    # end
-    # if params[:search_by_first_name] && params[:search_by_first_name] != ""
-    #   @users = @users.where("name like ?",
-    #   "%# {params[:search_by_first_name]}%")
-    # end
-    #   if params[:search_by_color] && params[:search_by_color] != ""
-    #     @kittens = @kittens.where("color like ?",
-    #     "%# {params[:search_by_color]}%")
-    #   end
-    #  if params[:search_by_age] && params[:search_by_age] != ""
-    #     @kittens = @kittens.where("age like ?",
-    #     "%# {params[:search_by_color]}%")
-    #   end
+      respond_to do |format|
+        format.html
+        format.csv do
+          send_data @users.to_csv
+        end
+      end
+    end
 
     def show; end
 
