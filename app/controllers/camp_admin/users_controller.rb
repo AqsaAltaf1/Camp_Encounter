@@ -3,12 +3,22 @@
 module CampAdmin
   # user
   class UsersController < ApplicationController
-    before_action :set_user, except: [:index]
+    before_action :set_user, except: %i[index]
 
     def edit; end
 
     def index
-      @users = User.all
+      @users =
+        User.all
+            .where('first_name LIKE ? OR last_name LIKE ? OR email LIKE ? ',"%#{params[:q]}%","%#{params[:q]}%", "%#{params[:q]}%")
+            .page(params[:page])
+
+      respond_to do |format|
+        format.html
+        format.csv do
+          send_data @users.to_csv
+        end
+      end
     end
 
     def show; end
