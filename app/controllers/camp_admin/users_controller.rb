@@ -8,16 +8,13 @@ module CampAdmin
     def edit; end
 
     def index
-      @users =
-        User.all
-            .where('first_name LIKE ? OR last_name LIKE ? OR email LIKE ? ',"%#{params[:q]}%","%#{params[:q]}%", "%#{params[:q]}%")
-            .page(params[:page])
+      @users = User.search(params[:q])
+                   .order("#{params[:sort]} #{params[:direction]}")
+                   .page(params[:page])
 
       respond_to do |format|
         format.html
-        format.csv do
-          send_data @users.to_csv
-        end
+        format.csv { send_data User.to_csv }
       end
     end
 
