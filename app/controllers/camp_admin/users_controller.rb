@@ -8,11 +8,10 @@ module CampAdmin
     def edit; end
 
     def index
-      # @users = User.all.page(params[:page])
-      @users = User.all
-      # return unless params[:q].present?
-      # @users = User.all.where('first_name LIKE ? OR last_name LIKE ? OR email LIKE ? ',
-      #                         "%#{params[:q]}%", "%#{params[:q]}%", "%#{params[:q]}%")
+      @users =
+        User.all
+            .where('first_name LIKE ? OR last_name LIKE ? OR email LIKE ? ',"%#{params[:q]}%","%#{params[:q]}%", "%#{params[:q]}%")
+            .page(params[:page])
 
       respond_to do |format|
         format.html
