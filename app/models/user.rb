@@ -5,6 +5,9 @@ require 'csv'
 # user
 class User < ApplicationRecord
   paginates_per 3
+
+  scope :search, ->(q) { q.present? ? where('first_name LIKE :q OR last_name LIKE :q OR email LIKE :q ', q: q) : all }
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -23,7 +26,8 @@ class User < ApplicationRecord
       csv << attributes
 
       all.each do |user|
-        csv << attributes.map { |attr| user.send(attr) }
+        # csv << attributes.map { |attr| user.send(attr) }
+        csv << user.attributes.values
       end
     end
   end
