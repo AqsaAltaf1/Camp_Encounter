@@ -12,7 +12,6 @@ class LocationsController < ApplicationController
   end
 
   def create
-    byebug
     @location = Location.new(location_params)
 
     if @location.save

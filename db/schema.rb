@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 2023_02_07_102730) do
   create_table "locations", force: :cascade do |t|
     t.string "title"
     t.string "camp_location"
-    t.integer "status"
+    t.integer "status", default: 0
     t.datetime "start_date"
     t.datetime "end_date"
     t.datetime "created_at", null: false
