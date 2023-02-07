@@ -15,10 +15,13 @@
     <%= form.text_area :status %>
   </div>
   <div>
-    <%= form.label :registration %><br>
-    <%= form.text_area :registration %>
+    <%= form.label :start_date %><br>
+     <%= form.datetime_field :start_date %>
   </div>
-
+    <div>
+    <%= form.label :end_date %><br>
+     <%= form.datetime_field  :end_date %>
+  </div>
   <div>
   <%= form.submit %>
   </div>

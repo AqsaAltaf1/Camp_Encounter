@@ -6,8 +6,6 @@ class Location < ApplicationRecord
 
 
  def end_must_be_after_start
-    if :start_date >= :end_date
-      errors.add(:end_time, "must be greater than start time")
-    end
+   errors.add(:end_time, 'must be greater than start time') if start_date > end_date
  end
 end
