@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# Style/Documentation
 class LocationsController < ApplicationController
   def index
     @locations = Location.all
@@ -22,7 +25,8 @@ class LocationsController < ApplicationController
   end
 
   private
-    def location_params
-      params.require(:location).permit(:title, :camp_location, :status, :start_date, :end_date)
-    end
+
+  def location_params
+    params.require(:location).permit(:title, :camp_location, :status, :start_date, :end_date)
+  end
 end
