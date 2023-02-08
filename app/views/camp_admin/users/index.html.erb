@@ -13,7 +13,6 @@
       <%= link_to 'Camp details',camp_admin_locations_path, class:'btn btn-success' %>
     </div>
   </div>
-
   <h1>User data</h1>
   <table class='table table-striped table-hover'>
     <thead class='p-3 mb-2 bg-success'>
@@ -45,3 +44,5 @@
   </table>
   <%= paginate @users %>
 </div>
+<%= link_to 'Back', root_path, class: 'btn btn-success' %>
+

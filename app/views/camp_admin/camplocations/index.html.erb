@@ -32,7 +32,18 @@
       <% end %>
     </tbody>
   </table>
-  <%= paginate @camplocations %>
+  <div class='row'>
+   <div class='col'>
+   <%= paginate @camplocations %>
+   </div>
+  <div class='col'>
+
+   <%= link_to 'Back',camp_admin_locations_path, class:'btn btn-success' %>
+  </div>
+  </div>
+
+
 </div>
+
 
 
