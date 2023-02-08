@@ -1,9 +1,9 @@
 <div class='row'>
   <div class='col'>
-    <%= link_to 'Add Camp',new_location_path, class:'btn btn-success' %>
+    <%= link_to 'Add Camp',new_camp_admin_location_path, class:'btn btn-success' %>
   </div>
   <div class='col'>
-    <%= link_to 'Locations',camplocations_path, class:'btn btn-success' %>
+    <%= link_to 'Locations',camp_admin_camplocations_path, class:'btn btn-success' %>
   </div>
 </div>
 <div class = 'col-lg-12 col-md-12 row' >
@@ -28,9 +28,9 @@
           <td><%= location.status %></td>
           <td><%= location.start_date %></td>
           <td><%= location.end_date %></td>
-          <td><%= link_to 'Show', location_path(location) %></td>
-          <td><%= link_to 'Edit', edit_location_path(location) %></td>
-          <td><%= link_to 'Destroy', location_path(location), data: { confirm: 'Are you sure?' }, method: :delete %></td>
+          <td><%= link_to 'Show', camp_admin_location_path(location) %></td>
+          <td><%= link_to 'Edit', edit_camp_admin_location_path(location) %></td>
+          <td><%= link_to 'Destroy', camp_admin_location_path(location), data: { confirm: 'Are you sure?' }, method: :delete %></td>
         </tr>
       <% end %>
     </tbody>

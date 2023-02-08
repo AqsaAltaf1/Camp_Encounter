@@ -1,7 +1,10 @@
 # frozen_string_literal: true
 
 # comment
+module CampAdmin
 class CamplocationsController < ApplicationController
+
+  before_action :set_camp, only: %i[edit show update destroy]
   def index
     @camplocations = Camplocation.search(params[:p])
                                  .order("#{params[:sort]} #{params[:direction]}")
@@ -14,7 +17,9 @@ class CamplocationsController < ApplicationController
   end
 
   def show
-    @camplocation = Camplocation.find(params[:id])
+  end
+
+  def edit
   end
 
   def new
@@ -25,7 +30,7 @@ class CamplocationsController < ApplicationController
     @camplocation = Camplocation.new(camp_params)
 
     if @camplocation.save!
-      redirect_to camplocations_path
+      redirect_to camp_admin_camplocations_path
     else
       render :new, status: :unprocessable_entity
     end
@@ -33,7 +38,7 @@ class CamplocationsController < ApplicationController
 
   def update
     if @camplocation.update(camp_params)
-      redirect_to camplocations_path
+      redirect_to camp_admin_camplocations_path
     else
       render 'edit'
     end
@@ -42,7 +47,7 @@ class CamplocationsController < ApplicationController
   def destroy
     return unless @camplocation.destroy
 
-    redirect_to camplocations_path
+    redirect_to camp_admin_camplocations_path
   end
 
   private
@@ -50,4 +55,9 @@ class CamplocationsController < ApplicationController
   def camp_params
     params.require(:camplocation).permit(:title)
   end
+
+  def set_camp
+    @camplocation = Camplocation.find(params[:id])
+  end
+end
 end

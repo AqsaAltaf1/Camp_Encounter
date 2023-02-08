@@ -19,6 +19,12 @@
       <ul>
     </div>
   </div>
-  <%= link_to 'Back', camp_admin_users_path %>
-  <%= link_to "Edit", edit_camp_admin_user_path(@user),:method => :update, :class => 'btn btn-large btn-primary' %>
+  <div class='row'>
+    <div class='col'>
+      <%= link_to 'Back', camp_admin_users_path, class: 'btn btn-success' %>
+    </div>
+    <div class='col'>
+      <%= link_to "Edit", edit_camp_admin_user_path(@user), class: 'btn  btn-success' %>
+    </div>
+  </div>
 </div>
