@@ -1,0 +1,18 @@
+<div class="container ">
+  <div class="col-md-6 mx-auto shadow p-3 mb-5 bg-body rounded">
+  <h3>Edit here</h3>
+
+   <%= form_with model: @camplocation, url: camplocation_path(@camplocation), method: :patch, local: true do |f| %>
+
+      <div class="field">
+        <%= f.label :Title %><br />
+        <%= f.text_field :title, autofocus: true, autocomplete: "title", class: "form-control"%>
+
+      </div>
+
+      <div class="col">
+        <%= f.submit "Update", class: 'btn btn-success mb-3 btn-md' %>
+      </div>
+    <% end %>
+  </div>
+</div>
