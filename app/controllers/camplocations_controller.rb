@@ -3,7 +3,14 @@
 # comment
 class CamplocationsController < ApplicationController
   def index
-    @camplocations = Camplocation.all
+    @camplocations = Camplocation.search(params[:p])
+                                 .order("#{params[:sort]} #{params[:direction]}")
+                                 .page(params[:page])
+
+    respond_to do |format|
+      format.html
+      format.csv { send_data Camplocation.to_csv }
+    end
   end
 
   def show
