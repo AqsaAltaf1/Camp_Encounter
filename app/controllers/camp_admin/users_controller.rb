@@ -20,6 +20,9 @@ module CampAdmin
 
     def show; end
 
+    def profile
+    end
+
     def update
       if @user.update(user_params)
         redirect_to camp_admin_user_path

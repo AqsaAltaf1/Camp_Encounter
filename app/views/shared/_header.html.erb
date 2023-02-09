@@ -1,0 +1,16 @@
+<nav class="navbar navbar-expand-lg bg-success ">
+  <div class="container-fluid overflow-hidden">
+    <h1 class="navbar-brand camp">Camp Enconter</h1>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <div class='col-auto paths'>
+        <% if current_user %>
+        <%= link_to 'Sign out', destroy_user_session_path, method: :delete, class: 'links' %>
+        <% else %>
+        <%= link_to 'Register', new_user_registration_path ,class: 'links' %>
+        <%= link_to 'Sign in', new_user_session_path ,class: 'links' %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</nav>
