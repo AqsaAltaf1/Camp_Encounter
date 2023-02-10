@@ -10,7 +10,7 @@ module CampAdmin
 
     def index
       @users = User.search(params[:q])
-                   .order(sort_column + " " + sort_direction)
+                   .order("#{sort_column} #{sort_direction}")
                    .page(params[:page])
 
       respond_to do |format|
@@ -21,8 +21,7 @@ module CampAdmin
 
     def show; end
 
-    def profile
-    end
+    def profile; end
 
     def update
       if @user.update(user_params)
@@ -49,11 +48,11 @@ module CampAdmin
     end
 
     def sort_column
-      User.column_names.include?(params[:sort]) ? params[:sort] : "first_name"
+      User.column_names.include?(params[:sort]) ? params[:sort] : 'first_name'
     end
 
     def sort_direction
-      %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
+      %w[asc desc].include?(params[:direction]) ? params[:direction] : 'asc'
     end
   end
 end
