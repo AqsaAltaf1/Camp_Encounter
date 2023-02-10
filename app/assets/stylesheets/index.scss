@@ -1,1 +1,21 @@
+.pretty th .current{
+  background-repeat: no-repeat;
+  color:black;
 
+}
+.pretty th{
+  padding: 3px;
+}
+.pretty th .asc {
+  background-image: url(up.png);
+  background-size:15px;
+  padding-left:20px;
+  background-repeat: no-repeat;
+}
+
+.pretty th .desc {
+  background-image: url(down.png);
+  background-size:15px;
+  padding-left:20px;
+  background-repeat: no-repeat;
+}

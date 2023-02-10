@@ -2,12 +2,7 @@
   <% if current_user&.admin? %>
       <h1>Welcome Admin </h1>
   <% elsif current_user&.client? %>
-    <div class='col'>
       <h1>Welcome  <%= current_user&.first_name%> <%= current_user&.last_name%> </h1>
-    </div>
-    <div class='col'>
-      <%= link_to 'Profile', profile_camp_admin_user_path(current_user),  class:'btn btn-success position-absolute top-30 start-30' %>
-    </div>
   <% else %>
     <h1> Welcome</h1>
   <% end %>
