@@ -3,6 +3,7 @@
 # comment
 class Location < ApplicationRecord
   validate :end_must_be_after_start
+  paginates_per 5
 
   enum status: { inactive: 0, active: 1 }
 
