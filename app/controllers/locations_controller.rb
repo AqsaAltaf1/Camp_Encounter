@@ -24,6 +24,12 @@ class LocationsController < ApplicationController
     end
   end
 
+  def destroy
+    return unless @location.destroy
+
+    redirect_to locations_path
+  end
+
   private
 
   def location_params

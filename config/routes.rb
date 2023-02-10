@@ -3,6 +3,7 @@
 Rails.application.routes.draw do
   root 'welcome#index'
   resources :locations
+  resources :camplocations
 
   devise_for :users, controllers: {
     sessions: 'users/sessions',

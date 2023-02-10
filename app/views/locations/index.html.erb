@@ -1,6 +1,11 @@
-<div class='col'>
-  <%= link_to 'Add Location',new_location_path, class:'btn btn-success' %>
+<div class='row'>
+  <div class='col'>
+    <%= link_to 'Add Camp',new_location_path, class:'btn btn-success' %>
   </div>
+  <div class='col'>
+    <%= link_to 'Locations',camplocations_path, class:'btn btn-success' %>
+  </div>
+</div>
 <div class = 'col-lg-12 col-md-12 row' >
   <h1>Locations data</h1>
   <table class='table table-striped table-hover'>
