@@ -17,7 +17,7 @@ class User < ApplicationRecord
   validates :last_name, presence: true
   validates :phone_number, presence: true, numericality: { only_integer: true }
   validates :password, format: { with: /(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-])/,
-    message: 'Password must contain one upercase,one lowercase and one special character' } # rubocop :disable Layout/HashAlignment
+    message: 'Password must contain one upercase,one lowercase and one special character' }, on: :create # rubocop :disable Layout/HashAlignment
 
   def self.to_csv
     attributes = %w[id first_name last_name email country phone_number type]
