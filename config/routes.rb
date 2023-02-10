@@ -18,7 +18,11 @@ Rails.application.routes.draw do
   end
 
   namespace :camp_admin, path: 'admin' do
-    resources :locations
+    resources :locations do
+      member do
+        get 'active_camp'
+      end
+    end
   end
 
   namespace :camp_admin, path: 'admin' do

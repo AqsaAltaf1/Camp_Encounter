@@ -7,7 +7,11 @@ module CampAdmin
     before_action :set_location, only: %i[edit show update destroy]
 
     def index
-      @locations = Location.all
+      @locations = Location.all.page(params[:page])
+    end
+
+    def active_camp
+      @locations = Location.all.where(status: :active)
     end
 
     def show; end
