@@ -1,26 +1,4 @@
-<style>
-ul{
-  list-style-type: none;
-}
-
-li{
-  margin-bottom: 20px;
-}
-
-.view{
-  margin-top:20px;
-  margin: 10;
-  display: flex;
-  flex-direction:row;
-  justify-content:space-around;
-}
-
-h3{
-  text-align:center;
-}
-
-</style>
-<div class='container col-md-6 mx-auto shadow p-3 mb-5 bg-body rounded'>
+<div class='container col-md-6 mx-auto shadow p-3 mb-5 bg-body rounded mt-3'>
   <h3>View Here</h3>
   <div class='view'>
     <div>
@@ -41,6 +19,4 @@ h3{
       <ul>
     </div>
   </div>
-  <%= link_to 'Back', camp_admin_users_path %>
-  <%= link_to "Edit", edit_camp_admin_user_path(@user),:method => :update, :class => 'btn btn-large btn-primary' %>
 </div>

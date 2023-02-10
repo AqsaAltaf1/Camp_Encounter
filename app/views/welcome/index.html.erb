@@ -1,51 +1,9 @@
-<style>
-   .link1{
-    text-decoration: none;
-    color: white;
-    margin-right:30px;
-   }
-
-   .link1:hover{
-    color: black;
-   }
-
-   .main{
-    margin:0;
-    padding:0;
-    position: absolute;
-
-
-
-   }
-
-</style>
-
-  <div class='main'>
-
-    <%#= image_tag asset_path("camp.jpg"), class: 'img' %>
-    <div class='navcontain'>
-      <nav class="navbar fixed-top bg-success row mb-5 shadow">
-        <div class="container-fluid text-white col">
-          <h5>Camp Encounter</h5>
-        </div>
-
-        <div class='col-auto'>
-          <%= link_to "Sign in", new_user_session_path , class: 'link1'%>
-          <%= link_to "Sign up", new_user_registration_path, class:'link1' %>
-        </div>
-      </nav>
-    </div>
-    <h1>welcome</h1>
-    <h5>
-    <% if current_user %>
-    <%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
-    <%= link_to 'Edit', edit_user_registration_path %>
-    <% else %>
-    <%= link_to 'Register', new_user_registration_path %>
-    <%= link_to 'Sign in', new_user_session_path %>
-    <% end %>
-
-      <%= link_to "Admin/Users", camp_admin_users_path %>
-    </h5>
+<div class='row mt-5'>
+  <% if current_user&.admin? %>
+      <h1>Welcome Admin </h1>
+  <% elsif current_user&.client? %>
+      <h1>Welcome  <%= current_user&.first_name%> <%= current_user&.last_name%> </h1>
+  <% else %>
+    <h1> Welcome</h1>
+  <% end %>
 </div>
-

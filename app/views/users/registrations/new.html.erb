@@ -45,7 +45,7 @@
           <div class="col">
            <div class="field">
               <%= f.label :type, class: "form-label" %><br />
-              <%= f.select(:type, [ 'Client', 'Admin','SuperAdmin' ],  class:"form-select") %>
+              <%= f.select :type, [ 'Admin', 'Client','SuperAdmin' ], {}, class:"form-select" %>
                 <span class="text-danger"><%= f.object.errors[:type][0] if f.object.errors.any? %></span>
            </div>
         </div>
@@ -77,7 +77,7 @@
 
       <div class='row'>
           <div class='col-auto'>
-           <%= f.submit "Sign Up", class: 'btn btn-success mb-3 btn-lg' %>
+           <%= f.submit "Sign Up", class: 'btn btn-success mb-3 btn-lg mt-3' %>
           </div>
       </div>
 
