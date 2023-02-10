@@ -33,7 +33,7 @@
           <td><%= user.email %></td>
           <td><%= user.country %></td>
           <td><%= user.phone_number %></td>
-          <td><%= link_to 'View', camp_admin_user_path(user) %></td>
+          <td><%= link_to 'Show', camp_admin_user_path(user) %></td>
           <td><%= link_to 'Edit', edit_camp_admin_user_path(user) %></td>
           <td><%= link_to 'Destroy', camp_admin_user_path(user), data: { confirm: 'Are you sure?' }, method: :delete %></td>
         </tr>
