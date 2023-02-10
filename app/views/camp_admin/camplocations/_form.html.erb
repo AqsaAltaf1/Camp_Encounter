@@ -1,0 +1,10 @@
+<%= form_with model: [:camp_admin, @camplocation] do |form| %>
+  <div>
+    <%= form.label :title %><br>
+    <%= form.text_field :title , class: "form-control" %>
+  </div>
+  <div>
+  <%= form.submit class: 'btn btn-success mb-3 mt-3' %>
+  </div>
+<% end %>
+

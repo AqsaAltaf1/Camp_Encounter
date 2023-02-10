@@ -1,18 +1,26 @@
-.link1{
-  text-decoration: none;
-  color: white;
-  margin-right:30px;
- }
-
- .link1:hover{
-  color: black;
- }
-
- .main{
-  margin:0;
-  padding:0;
-  position: absolute;
-
-
-
- }
+.pretty th .current{
+  background-repeat: no-repeat;
+  color:black;
+}
+.pretty thead tr th a{
+  color:black;
+  text-decoration:none;
+}
+.pretty tbody tr td a{
+  text-decoration:none;
+}
+.pretty th{
+  padding: 3px;
+}
+.pretty th .asc {
+  background-image: url(up.png);
+  background-size:15px;
+  padding-left:20px;
+  background-repeat: no-repeat;
+}
+.pretty th .desc {
+  background-image: url(down.png);
+  background-size:15px;
+  padding-left:20px;
+  background-repeat: no-repeat;
+}

@@ -2,8 +2,6 @@
 
 Rails.application.routes.draw do
   root 'welcome#index'
-  resources :locations
-  resources :camplocations
 
   devise_for :users, controllers: {
     sessions: 'users/sessions',
@@ -12,6 +10,18 @@ Rails.application.routes.draw do
   }
 
   namespace :camp_admin, path: 'admin' do
-    resources :users
+    resources :users do
+      member do
+        get 'profile'
+      end
+    end
+  end
+
+  namespace :camp_admin, path: 'admin' do
+    resources :locations
+  end
+
+  namespace :camp_admin, path: 'admin' do
+    resources :camplocations
   end
 end
