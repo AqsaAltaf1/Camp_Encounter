@@ -1,24 +1,22 @@
 <div class="container ">
-
 <div class="col-md-6 mx-auto shadow p-3 mb-5 bg-body rounded">
-
   <h2>Sign up</h2>
   <p>Take a momenet to create a account with us</p><hr>
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-        <div class="row">
-          <div class="col">
-             <%= f.label :FirstName %><br />
-             <%= f.text_field :first_name, autofocus: true, autocomplete: "first_name", class: "form-control"%>
-              <span class="text-danger"><%= f.object.errors[:first_name][0] if f.object.errors.any? %></span>
-          </div>
-            <div class="col">
-
-              <%= f.label :LastName %><br />
-              <%= f.text_field :last_name, autofocus: true, autocomplete: "LastName", class: "form-control" %>
-               <span class="text-danger"><%= f.object.errors[:last_name][0] if f.object.errors.any? %></span>
-            </div>
-
+      <div class="row">
+        <div class="col">
+            <%= f.label :FirstName %><br />
+            <%= f.text_field :first_name, autofocus: true, autocomplete: "first_name", class: "form-control"%>
+            <span class="text-danger"><%= f.object.errors[:first_name][0] if f.object.errors.any? %></span>
         </div>
+          <div class="col">
+
+            <%= f.label :LastName %><br />
+            <%= f.text_field :last_name, autofocus: true, autocomplete: "LastName", class: "form-control" %>
+              <span class="text-danger"><%= f.object.errors[:last_name][0] if f.object.errors.any? %></span>
+          </div>
+
+      </div>
 
       <div class="row">
 
@@ -49,7 +47,6 @@
                 <span class="text-danger"><%= f.object.errors[:type][0] if f.object.errors.any? %></span>
            </div>
         </div>
-
       </div>
       <div class="row">
         <div class="col">
@@ -80,7 +77,6 @@
            <%= f.submit "Sign Up", class: 'btn btn-success mb-3 btn-lg mt-3' %>
           </div>
       </div>
-
     <% end %>
       <%= render 'users/shared/links' %>
    </div>

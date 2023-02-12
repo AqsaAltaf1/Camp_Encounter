@@ -14,6 +14,10 @@ module CampAdmin
       @locations = Location.all.where(status: :active)
     end
 
+    def intro
+
+    end
+
     def show; end
 
     def edit; end

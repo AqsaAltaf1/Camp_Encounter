@@ -21,6 +21,7 @@ Rails.application.routes.draw do
     resources :locations do
       member do
         get 'active_camp'
+        get 'intro'
       end
     end
   end
