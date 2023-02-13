@@ -18,3 +18,10 @@
   background:green;
   text-decoration: none;
 }
+.control-me {
+  display: none;
+}
+
+#toggle:checked ~ .control-me {
+  display: block;
+}
