@@ -40,7 +40,7 @@ module CampAdmin
     private
 
     def user_params
-      params.require(:client).permit(:first_name, :last_name, :email, :country)
+      params.require(:client).permit(:first_name, :last_name, :email, :country, :image)
     end
 
     def set_user

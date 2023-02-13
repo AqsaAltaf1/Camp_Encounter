@@ -14,9 +14,7 @@
  */
 
  // Custom bootstrap variables must be set or imported *before* bootstrap.
- .introduction .button{
-    margin-left:500px;
-  }
+
  @import 'bootstrap';
  @import 'signout';
  @import 'signout';
@@ -24,5 +22,6 @@
  @import 'show';
  @import 'edit';
  @import 'header';
+ @import 'custom';
 
 
