@@ -69,3 +69,4 @@ gem 'bootstrap', '~> 5.2.2'
 gem 'jquery-rails'
 gem 'kaminari'
 gem 'letter_opener', group: :development
+gem 'wicked'

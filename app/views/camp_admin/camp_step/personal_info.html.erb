@@ -1,0 +1,55 @@
+<div class="container mt-4">
+  <div class="col-md-6 mx-auto shadow p-5 mb-5 bg-body rounded">
+  <h1>Personal Information</h1>
+    <%= form_for @user, url: wizard_path do |f| %>
+      <div class="row mt-2">
+        <div class="col">
+          <%= f.label :FirstName %><br />
+          <%= f.text_field :first_name, autofocus: true, autocomplete: "first_name", class: "form-control"%>
+        </div>
+        <div class="col">
+          <%= f.label :LastName %><br />
+          <%= f.text_field :last_name, autofocus: true, autocomplete: "LastName", class: "form-control" %>
+        </div>
+      </div>
+
+      <div class="row mt-2">
+        <div class="col">
+          <%= f.label :Date_of_birth %><br/>
+          <%= f.date_select :Date_of_birth, start_year: Date.today.year - 100, end_year: Date.today.year, class: 'form-control' %>
+        </div>
+
+        <div class="col">
+          <%= f.label :Current_age %>
+          <%= f.text_field :Current_age, class: 'form-control' %>
+        </div>
+     </div>
+
+      <div class="row mt-2">
+        <%= f.label :email%><br />
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %>
+      </div>
+
+      <div class="mt-2">
+        <%= f.label :Gender %><br />
+        <%= radio_button_tag(:Gender, '') %>
+        <%= label_tag(:Gender, 'Male') %>
+        <%= radio_button_tag(:Gender, '') %>
+        <%= label_tag(:Gender, "Female") %>
+        <%= radio_button_tag(:Gender, '') %>
+        <%= label_tag(:Gender, "Other") %>
+      </div>
+
+      <div class="row mt-2">
+        <%= f.label :Profile_image %>
+        <%= f.file_field :image, class:'form-control' %>
+      </div>
+
+      <div class="row mt-2">
+        <div class='col btn-1'>
+          <%= link_to "Next", next_wizard_path, class: 'btn btn-success personal-btn' %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

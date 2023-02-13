@@ -1,0 +1,18 @@
+<div class="container ">
+  <div class="col-md-6 mx-auto shadow p-4  mt-5 mb-5 bg-body rounded">
+    <h1>Fifth step</h1>
+     <div class="mt-2">
+        <p class="text-start"> i will participate with joy.</p>
+        <%= radio_button_tag(:agree, 'yes') %>
+        <%= label_tag(:agree, 'Yes') %><br/>
+        <%= radio_button_tag(:agree, 'NO') %>
+        <%= label_tag(:agree, 'NO') %>
+      </div>
+
+      <div class="row mt-2">
+        <div class='col btn-1'>
+          <%= link_to "Next", next_wizard_path, class: 'btn btn-success personal-btn' %>
+        </div>
+      </div>
+  </div>
+</div>

@@ -1,0 +1,29 @@
+<div class="container mt-4">
+  <div class="col-md-6 mx-auto shadow p-5 mt-5  mb-5 bg-body rounded">
+    <h1>Second step</h1>
+    <div class="mt-2">
+      <p class="text-start"> i agree term and conditions</p>
+      <%= radio_button_tag(:agree, 'yes') %>
+      <%= label_tag(:agree, 'Yes') %><br/>
+      <%= radio_button_tag(:agree, 'NO') %>
+      <%= label_tag(:agree, 'NO') %>
+    </div>
+
+    <div class='mt-2'>
+      <p class="text-start"> i agreed for this camp</p>
+      <%= check_box_tag 'Yes', 'no',false,  id:"toggle" %> Yes<br/>
+      <div class="control-me">
+        <p class="text-start">Input Give reason </p>
+        <input type="text", class='form-control'>
+      </div>
+      <%= check_box_tag 'Yes', 'no',false, class: "name" %> No
+    </div>
+
+     <div class="row mt-2">
+        <div class='col btn-1'>
+          <%= link_to "Next", next_wizard_path, class: 'btn btn-success personal-btn' %>
+        </div>
+      </div>
+   </div>
+</div>
+

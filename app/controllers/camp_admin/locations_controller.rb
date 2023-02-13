@@ -4,7 +4,7 @@
 module CampAdmin
   # comment
   class LocationsController < ApplicationController
-    before_action :set_location, only: %i[edit show update destroy]
+    before_action :set_location, only: %i[edit show update destroy intro]
 
     def index
       @locations = Location.all.page(params[:page])
@@ -13,6 +13,8 @@ module CampAdmin
     def active_camp
       @locations = Location.all.where(status: :active)
     end
+
+    def intro; end
 
     def show; end
 
