@@ -1,13 +1,18 @@
-<%= render 'progressbar' %>
+<%= render 'shared/progressbar' %>
 <div class="container ">
   <div class="col-md-6 mx-auto shadow p-4  mt-5 mb-5 bg-body rounded">
-    <h1>Fifth step</h1>
-     <div class="mt-2">
+    <%= form_for @user, url: wizard_path do |f| %>
+      <h1>Fifth step</h1>
+      <div class="mt-2">
         <p class="text-start"> i will participate with joy.</p>
-        <%= radio_button_tag(:agree, 'yes') %>
-        <%= label_tag(:agree, 'Yes') %><br/>
-        <%= radio_button_tag(:agree, 'NO') %>
-        <%= label_tag(:agree, 'NO') %>
+        <div>
+          <%= f.check_box :agreement, id: "my_checkbox", class: "form-check-input", checked_value: "yes", unchecked_value: "no" %>
+          <%= f.label :checkbox_field, "Yes" %>
+        </div>
+        <div>
+          <%= f.check_box :agreement, id: "my_checkbox", class: "form-check-input", checked_value: "yes", unchecked_value: "no" %>
+          <%= f.label :checkbox_field, "NO" %>
+        </div>
       </div>
 
       <div class="row mt-2">
@@ -18,5 +23,6 @@
           <%= f.submit "submit", class: 'btn btn-success personal-btn' %>
         </div>
       </div>
+    <% end %>
   </div>
 </div>
