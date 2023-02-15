@@ -1,16 +1,11 @@
 .introduction .button{
   margin-left:500px;
 }
-.btn-1{
- margin-left: 180px;
- margin-top:10px;
-}
 .personal-btn {
-  border-radius: 60px;
+  border-radius:20px;
   font-family: Arial;
   color: #ffffff;
   font-size: 20px;
-  padding: 15px 10px 15px 10px;
   text-decoration: none;
 }
 
@@ -25,3 +20,25 @@
 #toggle:checked ~ .control-me {
   display: block;
 }
+
+.progress {
+  height: 20px;
+  margin-bottom: 20px;
+}
+
+.progress-bar {
+  background-color: #007bff;
+}
+
+.progress-label {
+  color: #683131;
+  position: absolute;
+  left: 10px;
+  top: 3px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+
+
+

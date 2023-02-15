@@ -1,0 +1,21 @@
+<%= render 'progressbar' %>
+<div class="container ">
+  <div class="col-md-6 mx-auto shadow p-4  mt-5 mb-5 bg-body rounded">
+  <%= form_for @user, url: wizard_path do |f| %>
+    <h1>Third step</h1>
+     <div class="mt-2">
+        <%= f.label :option, "I will work sincerly" %>
+        <%= f.select :option, [ 'agree', 'not','will think' ], {}, class:"form-select mt-2" %>
+      </div>
+
+      <div class="row mt-2">
+        <div class='col'>
+          <%= link_to "Back", previous_wizard_path, class: 'btn btn-success personal-btn' %>
+        </div>
+        <div class='col'>
+          <%= f.submit "submit", class: 'btn btn-success personal-btn' %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

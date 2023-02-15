@@ -1,0 +1,45 @@
+<%= render 'progressbar' %>
+<div class="container mt-4">
+  <div class="col-md-6 mx-auto shadow p-5 mt-5  mb-5 bg-body rounded">
+    <h1>Second step</h1>
+    <%= form_for @user, url: wizard_path do |f| %>
+    <div class="mt-2">
+      <p class="text-start"> i agree term and conditions</p>
+      <div class="row mt-2">
+        <div>
+          <%= f.radio_button :agree, :true %>
+          <%= f.label :agree, "YES", :value => "true" %>
+        </div>
+        <div>
+          <%= f.radio_button :agree, :false %>
+          <%= f.label :not_agree, "NO", :value => "False" %>
+        </div>
+      </div>
+    </div>
+    <div class='row mt-2'>
+      <div>
+        <%= f.check_box :agreement, id: "my_checkbox", class: "form-check-input", checked_value: "yes", unchecked_value: "no" %>
+        <%= f.label :checkbox_field, "Yes" %>
+      </div>
+      <div>
+        <%= f.check_box :agreement, id: "my_checkbox", class: "form-check-input", checked_value: "yes", unchecked_value: "no" %>
+        <%= f.label :checkbox_field, "NO" %>
+      </div>
+    </div>
+     <div class="row mt-2">
+        <%= f.label :reason,"Give reason" %><br />
+        <%= f.text_field :reason, autofocus: true, autocomplete: "reason", class: "form-control" %>
+      </div>
+     <div class="row mt-2">
+        <div class='col'>
+          <%= link_to "Back", previous_wizard_path, class: 'btn btn-success personal-btn'%>
+        </div>
+
+        <div class='col'>
+          <%= f.submit "submit", class: 'btn btn-success personal-btn' %>
+        </div>
+      </div>
+    <% end %>
+   </div>
+</div>
+

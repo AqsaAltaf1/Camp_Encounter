@@ -1,8 +1,9 @@
+<%= render 'progressbar' %>
 <div class="container ">
   <div class="col-md-6 mx-auto shadow p-4  mt-5 mb-5 bg-body rounded">
-    <h1>Sixth step</h1>
+    <h1>Fifth step</h1>
      <div class="mt-2">
-        <p class="text-start">I will aware other people about this camp.</p>
+        <p class="text-start"> i will participate with joy.</p>
         <%= radio_button_tag(:agree, 'yes') %>
         <%= label_tag(:agree, 'Yes') %><br/>
         <%= radio_button_tag(:agree, 'NO') %>
@@ -10,8 +11,11 @@
       </div>
 
       <div class="row mt-2">
-        <div class='col btn-1'>
-          <%= link_to "Next", next_wizard_path, class: 'btn btn-success personal-btn' %>
+        <div class='col'>
+          <%= link_to "Back", previous_wizard_path, class: 'btn btn-success personal-btn' %>
+        </div>
+        <div class='col'>
+          <%= f.submit "submit", class: 'btn btn-success personal-btn' %>
         </div>
       </div>
   </div>
