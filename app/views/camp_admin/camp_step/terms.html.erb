@@ -1,7 +1,15 @@
-<%= render 'shared/progressbar' %>
+<%= "Step #{@current_step} of #{@total_steps}" %>
+<div class="progress">
+  <div class="progress-bar bg-success" role="progressbar" style="width: 40%" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
+</div>
 <div class="container mt-4">
   <div class="col-md-6 mx-auto shadow p-5 mt-5  mb-5 bg-body rounded">
     <h1>Second step</h1>
+    <% total_fields = @user.attributes.count %>
+<% filled_fields = @user.attributes.values.reject(&:blank?).count %>
+<% percentage_filled = (filled_fields.to_f / total_fields.to_f) * 100 %>
+
+<p>Percentage of filled fields: <%= percentage_filled.round %> %</p>
     <%= form_for @user, url: wizard_path do |f| %>
     <div class="mt-2">
       <p class="text-start"> i agree term and conditions</p>
@@ -37,6 +45,10 @@
 
         <div class='col'>
           <%= f.submit "submit", class: 'btn btn-success personal-btn' %>
+        </div>
+
+        <div class='col'>
+          <%= link_to 'skip', next_wizard_path, class: 'btn btn-success personal-btn' %>
         </div>
       </div>
     <% end %>

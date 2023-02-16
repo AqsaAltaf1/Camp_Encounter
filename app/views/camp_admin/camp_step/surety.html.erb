@@ -1,4 +1,7 @@
-<%= render 'shared/progressbar' %>
+<%= "Step #{@current_step} of #{@total_steps}" %>
+<div class="progress">
+  <div class="progress-bar bg-success" role="progressbar" style="width: 60%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+</div>
 <div class="container ">
   <div class="col-md-6 mx-auto shadow p-4  mt-5 mb-5 bg-body rounded">
   <%= form_for @user, url: wizard_path do |f| %>
@@ -14,6 +17,9 @@
         </div>
         <div class='col'>
           <%= f.submit "submit", class: 'btn btn-success personal-btn' %>
+        </div>
+        <div class='col'>
+          <%= link_to 'skip', next_wizard_path, class: 'btn btn-success personal-btn' %>
         </div>
       </div>
     <% end %>

@@ -23,13 +23,4 @@ $(document).ready(function () {
   $("#user_type").addClass("form-select")
 });
 
-$(document).on('turbo:load', function() {
-  var progressBar = $('.progress-bar');
-  var progressLabel = $('.progress-label');
-  var stepIndex = parseInt($('#step').val());
-  var stepCount = parseInt($('#step-count').val());
-  var progress = ((stepIndex + 1) / stepCount) * 100;
-  progressBar.css('width', progress + '%');
-  progressBar.attr('aria-valuenow', progress);
-  progressLabel.text('Step ' + (stepIndex + 1));
-});
+

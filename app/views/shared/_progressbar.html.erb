@@ -1,18 +1,6 @@
+<%= "Step #{@current_step} of #{@total_steps}" %>
 <div class="progress">
-  <div class="progress-bar" role="progressbar" aria-valuenow="<%= @current_step %>" aria-valuemin="1" aria-valuemax="<%= @total_steps %>">
-    <span class="sr-only"><%= @current_step %> of <%= @total_steps %></span>
-  </div>
+  <div class="progress-bar bg-success" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
 </div>
 
-<script>
-$(function() {
-  var totalSteps = <%= @total_steps %>;
-  var currentStep = <%= @current_step %>;
 
-  var progressBar = $('.progress-bar');
-  var progressBarWidth = ((currentStep - 1) / (totalSteps - 1)) * 100;
-
-  progressBar.css('width', progressBarWidth + '%');
-  progressBar.find('.sr-only').text(currentStep + ' of ' + totalSteps);
-});
-</script>
