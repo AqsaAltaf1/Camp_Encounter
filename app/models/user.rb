@@ -5,7 +5,7 @@ require 'csv'
 # user
 class User < ApplicationRecord
   paginates_per 3
-  has_many_attached :images, :dependent => :destroy
+  has_one_attached :image, :dependent => :destroy
 
   scope :search, ->(q) { q.present? ? where('first_name LIKE :q OR last_name LIKE :q OR email LIKE :q ', q: q) : all }
 

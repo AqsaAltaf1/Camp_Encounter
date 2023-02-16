@@ -22,3 +22,5 @@
 $(document).ready(function () {
   $("#user_type").addClass("form-select")
 });
+
+
