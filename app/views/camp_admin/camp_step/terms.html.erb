@@ -5,11 +5,6 @@
 <div class="container mt-4">
   <div class="col-md-6 mx-auto shadow p-5 mt-5  mb-5 bg-body rounded">
     <h1>Second step</h1>
-    <% total_fields = @user.attributes.count %>
-<% filled_fields = @user.attributes.values.reject(&:blank?).count %>
-<% percentage_filled = (filled_fields.to_f / total_fields.to_f) * 100 %>
-
-<p>Percentage of filled fields: <%= percentage_filled.round %> %</p>
     <%= form_for @user, url: wizard_path do |f| %>
     <div class="mt-2">
       <p class="text-start"> i agree term and conditions</p>
@@ -25,15 +20,6 @@
       </div>
     </div>
     <div class='row mt-2'>
-      <div>
-        <%= f.check_box :agreement, id: "my_checkbox", class: "form-check-input", checked_value: "yes", unchecked_value: "no" %>
-        <%= f.label :checkbox_field, "Yes" %>
-      </div>
-      <div>
-        <%= f.check_box :agreement, id: "my_checkbox", class: "form-check-input", checked_value: "yes", unchecked_value: "no" %>
-        <%= f.label :checkbox_field, "NO" %>
-      </div>
-    </div>
      <div class="row mt-2">
         <%= f.label :reason,"Give reason" %><br />
         <%= f.text_field :reason, autofocus: true, autocomplete: "reason", class: "form-control" %>

@@ -2,7 +2,7 @@ module CampAdmin
   class CampStepController < ApplicationController
     include Wicked::Wizard
 
-    steps :personal_info, :terms, :surety, :sincerly, :end
+    steps :personal_info, :terms, :surety, :sincerly, :end, :finish
 
     def show
       @user = current_user
@@ -16,7 +16,6 @@ module CampAdmin
       @user.update(user_params)
       render_wizard @user
     end
-
 
     private
 
