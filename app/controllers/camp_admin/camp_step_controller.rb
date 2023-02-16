@@ -5,16 +5,17 @@ module CampAdmin
     steps :personal_info, :terms, :surety, :sincerly, :end, :finish
 
     def show
-      @user = current_user
+      @loc  = Location.find(params[:location_id]) if params[:location_id]
+      current_user.update(location_id: @loc.id) if @loc
+
       @current_step = current_step_index + 1
       @total_steps = steps.count
       render_wizard
     end
 
     def update
-      @user = current_user
-      @user.update(user_params)
-      render_wizard @user
+      current_user.update(user_params)
+      render_wizard current_user
     end
 
     private

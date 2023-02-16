@@ -4,8 +4,8 @@
 </div>
 <div class="container mt-4">
   <div class="col-md-6 mx-auto shadow p-5 mb-5 bg-body rounded">
-  <h1>Personal Information</h1>
-    <%= form_for @user, url: wizard_path do |f| %>
+    <h1>Personal Information</h1>
+    <%= form_for current_user, url: wizard_path do |f| %>
       <div class="row mt-2">
         <div class="col">
           <%= f.label :FirstName %><br />

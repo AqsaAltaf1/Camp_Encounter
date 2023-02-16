@@ -4,7 +4,7 @@
 </div>
 <div class="container ">
   <div class="col-md-6 mx-auto shadow p-4  mt-5 mb-5 bg-body rounded">
-    <%= form_for @user, url: wizard_path do |f| %>
+    <%= form_for current_user, url: wizard_path do |f| %>
       <h1>Forth step</h1>
         <p class="text-start"> i will participate sincerly</p>
       <div class="row mt-2">
