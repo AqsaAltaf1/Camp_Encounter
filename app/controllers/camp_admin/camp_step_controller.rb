@@ -7,7 +7,6 @@ module CampAdmin
     def show
       @loc  = Location.find(params[:location_id]) if params[:location_id]
       current_user.update(location_id: @loc.id) if @loc
-
       @current_step = current_step_index + 1
       @total_steps = steps.count
       render_wizard

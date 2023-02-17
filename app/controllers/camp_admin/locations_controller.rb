@@ -5,6 +5,7 @@ module CampAdmin
   # comment
   class LocationsController < ApplicationController
     before_action :set_location, only: %i[edit show update destroy intro]
+    before_action :validate_current_camp, only: :active_camp
 
     def index
       @locations = Location.all.page(params[:page])
@@ -56,6 +57,12 @@ module CampAdmin
 
     def set_location
       @location = Location.find(params[:id])
+    end
+
+    def validate_current_camp
+      return unless current_user.location_id
+
+      redirect_to root_path
     end
   end
 end
