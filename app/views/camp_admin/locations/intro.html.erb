@@ -19,7 +19,7 @@
 			<%= flash.alert = "please participate in next camp." %>
 		</p>
 	<% else %>
-		<%= link_to 'Start Camp',camp_admin_camp_step_index_path(location_id:  @location ) ,class: 'btn btn-success button' %>
+		<%= link_to 'Start Camp',new_camp_admin_user_application_path(location_id: @location ) ,class: 'btn btn-success button' %>
 	<% end %>
 </div>
 
