@@ -5,16 +5,16 @@ module CampAdmin
     steps :personal_info, :terms, :surety, :sincerly, :end, :finish
 
     def show
-      @loc  = Location.find(params[:location_id]) if params[:location_id]
-      current_user.update(location_id: @loc.id) if @loc
+      @user_application = UserApplication.find(params[:user_application_id]) if params[:user_application_id]
       @current_step = current_step_index + 1
       @total_steps = steps.count
       render_wizard
     end
 
     def update
-      current_user.update(user_params)
-      render_wizard current_user
+      @user_application = UserApplication.find(params[:user_application_id])
+      @user_application.update(application_params)
+      render_wizard @user_application
     end
 
     private
@@ -23,8 +23,8 @@ module CampAdmin
       redirect_to root_url, notice: "Thank you for signing up."
     end
 
-    def user_params
-      params.require(:client).permit(:first_name, :last_name, :email, :country, :profile_image, :Date_of_birth,:Current_age, :Gender, :agree, :agreement, :reason, :option)
+    def application_params
+      params.require(:user_application).permit(:first_name, :last_name, :email, :country, :image, :Date_of_birth,:Current_age, :Gender, :agree, :agreement, :reason, :option)
     end
   end
 end
