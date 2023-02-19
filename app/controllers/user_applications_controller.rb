@@ -38,10 +38,12 @@ class UserApplicationsController < ApplicationController
   private
 
   def application_params
-    params.require(:user_application).permit(:first_name, :last_name, :email, :country, :image, :Gender, :agree, :agreement, :reason)
+    params.require(:user_application).permit(:first_name, :last_name, :email, :country, :image, :Gender, :agree, :agreement, :reason, :is_completed)
   end
 
   def set_user
     @user_application = UserApplication.find(params[:id])
   end
+
+
 end
