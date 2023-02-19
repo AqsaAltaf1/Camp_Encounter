@@ -73,7 +73,7 @@ ActiveRecord::Schema.define(version: 2023_02_19_163745) do
     t.string "email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.boolean "is_completed", default: false
+    t.integer "is_completed", default: 0
     t.index ["location_id"], name: "index_user_applications_on_location_id"
     t.index ["user_id"], name: "index_user_applications_on_user_id"
   end
