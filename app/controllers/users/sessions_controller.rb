@@ -4,7 +4,9 @@ module Users
   # comment
   class SessionsController < Devise::SessionsController
     def after_sign_in_path_for(_resource)
-      if current_user.client?
+      if current_user.client? && Client.first.user_application.present?
+        root_path
+      elsif current_user.client?
         active_camp_camp_admin_location_path(current_user)
       else
         root_path
