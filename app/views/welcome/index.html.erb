@@ -1,7 +1,7 @@
 <div class='row mt-5'>
   <% if current_user&.admin? %>
     <h1>Welcome Admin </h1>
-  <% elsif current_user&.client? && UserApplication.includes(:user_id) %>
+  <% elsif current_user&.client? && current_user.user_application.present? %>
     <h1>Congratulations <%= current_user&.first_name%> <%= current_user&.last_name%> you have submitted successfully </h1>
     <div class='col'>
     <%= link_to 'View Application', user_application_path(current_user.user_application.id), class: 'btn btn-success' %>
