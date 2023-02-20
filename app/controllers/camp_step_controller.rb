@@ -26,7 +26,6 @@ class CampStepController < ApplicationController
   end
 
   def application_params
-    params.require(:user_application).permit(:first_name, :last_name, :email, :country, :image, :Date_of_birth,
-                                             :Current_age, :Gender, :agree, :agreement, :reason, :option, :is_completed)
+    params.require(:user_application).permit(:first_name, :last_name, :email, :country, :image, :Date_of_birth, :Current_age, :Gender, :agree, :agreement, :reason, :option, :is_completed)
   end
 end
