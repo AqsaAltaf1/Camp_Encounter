@@ -10,7 +10,7 @@
 
   <body>
       <%= render 'shared/header' %>
-
+      <%= render 'shared/flash' %>
       <div class='container-fluid px-0'>
         <div class='row flex-nowrap mx-0'>
         <%= render 'shared/sidbar' if current_user&.admin? %>

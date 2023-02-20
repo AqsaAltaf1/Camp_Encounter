@@ -11,7 +11,7 @@ Rails.application.routes.draw do # rubocop :disable  Metrics/BlockLength
     passwords: 'users/passwords'
   }
 
-  namespace :camp_admin, path: 'admin' do
+  namespace :camp_admin, path: :admin do
     resources :users do
       member do
         get :profile
@@ -19,7 +19,7 @@ Rails.application.routes.draw do # rubocop :disable  Metrics/BlockLength
     end
   end
 
-  namespace :camp_admin, path: 'admin' do
+  namespace :camp_admin, path: :admin do
     resources :locations do
       member do
         get :active_camp
@@ -28,7 +28,7 @@ Rails.application.routes.draw do # rubocop :disable  Metrics/BlockLength
     end
   end
 
-  namespace :camp_admin, path: 'admin' do
+  namespace :camp_admin, path: :admin do
     resources :camplocations
   end
 end

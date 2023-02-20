@@ -24,7 +24,7 @@ module CampAdmin
       authorize @location
 
       if @location.save!
-        redirect_to camp_admin_locations_path
+        redirect_to camp_admin_locations_path, notice: "Your location has been saved"
       else
         render :new, status: :unprocessable_entity
       end
@@ -32,9 +32,9 @@ module CampAdmin
 
     def update
       if @location.update(location_params)
-        redirect_to camp_admin_location_path
+        redirect_to camp_admin_location_path, notice: "Your location has been updated"
       else
-        render 'edit'
+        render 'edit', notice: "Something went wrong"
       end
     end
 

@@ -5,8 +5,8 @@ module CampAdmin
   # comment
   class CamplocationsController < ApplicationController
     before_action :set_camp, only: %i[edit show update destroy]
-    helper_method :sort_column, :sort_direction
     before_action :authenticate_user!, except: %i[index show]
+    helper_method :sort_column, :sort_direction
 
     def index
       @camplocations = Camplocation.search(params[:p])
@@ -32,7 +32,8 @@ module CampAdmin
       authorize @camplocation
 
       if @camplocation.save!
-        redirect_to camp_admin_camplocations_path
+        redirect_to camp_admin_camplocations_path, notice: "Your camplocation has been saved"
+
       else
         render :new, status: :unprocessable_entity
       end
@@ -40,9 +41,9 @@ module CampAdmin
 
     def update
       if @camplocation.update(camp_params)
-        redirect_to camp_admin_camplocations_path
+        redirect_to camp_admin_camplocations_path, notice: "Your profile has been updated."
       else
-        render 'edit'
+        render 'edit', alert: "Something went wrong"
       end
     end
 

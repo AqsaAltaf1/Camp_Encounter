@@ -25,9 +25,9 @@ class UserApplicationsController < ApplicationController
 
   def update
     if @user_application.update(application_params)
-      redirect_to user_application_path
+      redirect_to user_application_path, notice: "Application has been updated successfuly"
     else
-      render 'edit'
+      render 'edit', notice: "Something went wrong"
     end
   end
 

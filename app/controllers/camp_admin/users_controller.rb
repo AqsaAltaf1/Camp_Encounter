@@ -23,9 +23,9 @@ module CampAdmin
 
     def update
       if @user.update(user_params)
-        redirect_to camp_admin_user_path
+        redirect_to camp_admin_user_path, notice: "Your profile has been updated"
       else
-        render 'edit'
+        render 'edit', notice: "Something went wrong"
       end
     end
 
