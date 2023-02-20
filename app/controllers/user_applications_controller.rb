@@ -19,9 +19,9 @@ class UserApplicationsController < ApplicationController
     redirect_to camp_step_index_path(user_application_id: @user_application)
   end
 
-  def create; end
-
   def edit; end
+
+  def create; end
 
   def update
     if @user_application.update(application_params)

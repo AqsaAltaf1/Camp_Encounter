@@ -6,8 +6,6 @@ module CampAdmin
     before_action :set_user, only: %i[edit update destroy show]
     helper_method :sort_column, :sort_direction
 
-    def edit; end
-
     def index
       @users = User.search(params[:q])
                    .order("#{sort_column} #{sort_direction}")
@@ -21,7 +19,7 @@ module CampAdmin
 
     def show; end
 
-    def profile; end
+    def edit; end
 
     def update
       if @user.update(user_params)
@@ -36,6 +34,8 @@ module CampAdmin
 
       redirect_to camp_admin_users_path
     end
+
+    def profile; end
 
     private
 

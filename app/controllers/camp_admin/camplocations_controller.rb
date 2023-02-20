@@ -21,15 +21,15 @@ module CampAdmin
 
     def show; end
 
-    def edit; end
-
     def new
       @camplocation = Camplocation.new
     end
 
+    def edit; end
+
     def create
       @camplocation = Camplocation.new(camp_params)
-      autherize @camplocation
+      authorize @camplocation
 
       if @camplocation.save!
         redirect_to camp_admin_camplocations_path

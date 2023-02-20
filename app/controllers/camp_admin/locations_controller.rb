@@ -11,18 +11,24 @@ module CampAdmin
       @locations = Location.all.page(params[:page])
     end
 
-    def active_camp
-      @locations = Location.all.where(status: :active)
-    end
-
-    def intro; end
-
     def show; end
-
-    def edit; end
 
     def new
       @location = Location.new
+    end
+
+    def edit; end
+
+
+    def create
+      @location = Location.new(location_params)
+      authorize @location
+
+      if @location.save!
+        redirect_to camp_admin_locations_path
+      else
+        render :new, status: :unprocessable_entity
+      end
     end
 
     def update
@@ -33,22 +39,17 @@ module CampAdmin
       end
     end
 
-    def create
-      @location = Location.new(location_params)
-      autherize @location
-
-      if @location.save!
-        redirect_to camp_admin_locations_path
-      else
-        render :new, status: :unprocessable_entity
-      end
-    end
-
     def destroy
       return unless @location.destroy
 
       redirect_to camp_admin_locations_path
     end
+
+    def active_camp
+      @locations = Location.all.where(status: :active)
+    end
+
+    def intro; end
 
     private
 
