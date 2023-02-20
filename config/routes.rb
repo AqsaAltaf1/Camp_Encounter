@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-Rails.application.routes.draw do  # rubocop:disable Metrics/BlockLeng
+Rails.application.routes.draw do # rubocop :disable  Metrics/BlockLength
   root 'welcome#index'
   resources :camp_step
   resources :user_applications

@@ -19,7 +19,6 @@ module CampAdmin
 
     def edit; end
 
-
     def create
       @location = Location.new(location_params)
       authorize @location
