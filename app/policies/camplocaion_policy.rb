@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# comment
 class CamplocationPolicy < ApplicationPolicy
   attr_reader :user, :location
 
@@ -6,3 +9,4 @@ class CamplocationPolicy < ApplicationPolicy
     @camplocation = camplocation
   end
 end
+# super
