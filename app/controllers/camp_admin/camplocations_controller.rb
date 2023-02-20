@@ -6,6 +6,7 @@ module CampAdmin
   class CamplocationsController < ApplicationController
     before_action :set_camp, only: %i[edit show update destroy]
     helper_method :sort_column, :sort_direction
+    before_action :authenticate_user!, except: %i[index show]
 
     def index
       @camplocations = Camplocation.search(params[:p])
@@ -28,6 +29,7 @@ module CampAdmin
 
     def create
       @camplocation = Camplocation.new(camp_params)
+      autherize @camplocation
 
       if @camplocation.save!
         redirect_to camp_admin_camplocations_path
