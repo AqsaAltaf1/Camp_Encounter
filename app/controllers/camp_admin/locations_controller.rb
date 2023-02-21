@@ -9,17 +9,22 @@ module CampAdmin
 
     def index
       @locations = Location.all.page(params[:page])
+      authorize([:camp_admin, @location])
     end
 
     def show; end
 
     def new
       @location = Location.new
+      authorize([:camp_admin, @location])
     end
 
-    def edit; end
+    def edit
+      authorize([:camp_admin, @location])
+    end
 
     def create
+      authorize([:camp_admin, @location])
       @location = Location.new(location_params)
       authorize @location
 
@@ -31,6 +36,7 @@ module CampAdmin
     end
 
     def update
+      authorize([:camp_admin, @location])
       if @location.update(location_params)
         redirect_to camp_admin_location_path, notice: "Your location has been updated"
       else
@@ -39,6 +45,7 @@ module CampAdmin
     end
 
     def destroy
+      authorize([:camp_admin, @location])
       return unless @location.destroy
 
       redirect_to camp_admin_locations_path

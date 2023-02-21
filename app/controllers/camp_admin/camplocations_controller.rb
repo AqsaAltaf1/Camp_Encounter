@@ -23,23 +23,26 @@ module CampAdmin
 
     def new
       @camplocation = Camplocation.new
+      authorize([:camp_admin, @camplocation])
     end
 
-    def edit; end
+    def edit
+      authorize([:camp_admin, @camplocation])
+    end
 
     def create
       @camplocation = Camplocation.new(camp_params)
-      authorize @camplocation
-
+      authorize([:camp_admin, @camplocation])
       if @camplocation.save!
         redirect_to camp_admin_camplocations_path, notice: "Your camplocation has been saved"
 
       else
-        render :new, status: :unprocessable_entity
+        render :new, alert: "Something went wrong"
       end
     end
 
     def update
+      authorize([:camp_admin, @camplocation])
       if @camplocation.update(camp_params)
         redirect_to camp_admin_camplocations_path, notice: "Your profile has been updated."
       else
@@ -48,6 +51,7 @@ module CampAdmin
     end
 
     def destroy
+      authorize([:camp_admin, @camplocation])
       return unless @camplocation.destroy
 
       redirect_to camp_admin_camplocations_path

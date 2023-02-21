@@ -1,12 +1,12 @@
 # frozen_string_literal: true
 
 # comment
-class LocationPolicy < ApplicationPolicy
+class CampAdmin::CamplocationPolicy < ApplicationPolicy
   attr_reader :user, :location
 
-  def initialize(user, location)
+  def initialize(user, camplocation)
     @user = user
-    @location = location
+    @camplocation = camplocation
   end
 
   def index?
