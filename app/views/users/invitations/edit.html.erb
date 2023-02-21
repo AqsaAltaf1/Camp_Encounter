@@ -16,7 +16,18 @@
           <%= f.text_field :last_name, class:'form-control' %>
         </div>
 
+        <div class="field">
+          <%= f.label :Country%><br />
+          <%= f.text_field :country, class: "form-control" %>
+        </div>
+
+        <div class="field">
+          <%= f.label :PhoneNumber %><br />
+          <%= f.text_field :phone_number, class: "form-control" %>
+        </div>
+
       <% if f.object.class.require_password_on_accepting %>
+
         <div class="field">
           <%= f.label :password %><br />
           <%= f.password_field :password, class:'form-control' %>
@@ -26,6 +37,7 @@
           <%= f.label :password_confirmation %><br />
           <%= f.password_field :password_confirmation, class:'form-control' %>
         </div>
+
       <% end %>
 
       <div class="actions">

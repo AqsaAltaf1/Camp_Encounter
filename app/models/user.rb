@@ -15,6 +15,7 @@ class User < ApplicationRecord
   devise :invitable, :database_authenticatable, :registerable,:recoverable, :rememberable, :validatable, :confirmable
 
   validates :first_name, :last_name, presence: true
+  validates :phone_number, presence: true, numericality: { only_integer: true }
   validates :password, format: { with: /(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-])/,
     message: 'Password must contain one upercase,one lowercase and one special character' }, on: :create # rubocop :disable Layout/HashAlignment
 
@@ -25,7 +26,6 @@ class User < ApplicationRecord
       csv << attributes
 
       all.each do |user|
-        # csv << attributes.map { |attr| user.send(attr) }
         csv << user.attributes.values
       end
     end
