@@ -14,7 +14,7 @@ class LocationPolicy < ApplicationPolicy
   end
 
   def show?
-    false
+    index?
   end
 
   def create?
@@ -26,14 +26,14 @@ class LocationPolicy < ApplicationPolicy
   end
 
   def update?
-    user.admin?
+    create?
   end
 
   def edit?
-    update?
+    create?
   end
 
   def destroy?
-    user.admin?
+    create?
   end
 end
