@@ -9,7 +9,6 @@ module CampAdmin
 
     def index
       @locations = Location.all.page(params[:page])
-      authorize([:camp_admin, @location])
     end
 
     def show; end
@@ -26,7 +25,6 @@ module CampAdmin
     def create
       authorize([:camp_admin, @location])
       @location = Location.new(location_params)
-      authorize @location
 
       if @location.save!
         redirect_to camp_admin_locations_path, notice: "Your location has been saved"

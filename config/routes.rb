@@ -8,7 +8,9 @@ Rails.application.routes.draw do # rubocop :disable  Metrics/BlockLength
   devise_for :users, controllers: {
     sessions: 'users/sessions',
     registrations: 'users/registrations',
-    passwords: 'users/passwords'
+    passwords: 'users/passwords',
+    invitations: 'users/invitations'
+
   }
 
   namespace :camp_admin, path: :admin do
