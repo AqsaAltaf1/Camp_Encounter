@@ -4,11 +4,10 @@
     <hr>
     <ul class="nav nav-pills flex-column mb-auto">
       <li>
-        <a href="<%= new_user_invitation_path %>" class="nav-link text-white">
+        <a href="<%= root_path %>" class="nav-link text-white">
           <svg class="bi me-2" width="16" height="16"><use xlink:href="#speedometer2"></use></svg>
-            Invite user
+            Home
         </a>
-
       </li>
       <li>
         <a href="<%=camp_admin_users_path %>" class="nav-link text-white">
@@ -32,6 +31,12 @@
         <a href="<%= user_applications_path %>" class="nav-link text-white">
           <svg class="bi me-2" width="16" height="16"><use xlink:href="#people-circle"></use></svg>
           User's Applications
+        </a>
+      </li>
+      <li>
+        <a href="<%= new_user_invitation_path %>" class="nav-link text-white">
+          <svg class="bi me-2" width="16" height="16"><use xlink:href="#speedometer2"></use></svg>
+            Invite user
         </a>
       </li>
     </ul>
