@@ -73,3 +73,5 @@ gem 'pundit'
 gem 'wicked'
 
 gem 'devise_invitable', '~> 2.0.0'
+
+gem 'interactor-rails'

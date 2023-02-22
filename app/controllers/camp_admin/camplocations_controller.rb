@@ -6,7 +6,7 @@ module CampAdmin
   class CamplocationsController < ApplicationController
     before_action :set_camp, only: %i[edit show update destroy]
     before_action :authenticate_user!, except: %i[index show]
-    before_action :camp_autherization, except: %i[show]
+    before_action :camp_autherization, except: %i[show index]
     helper_method :sort_column, :sort_direction
 
 
@@ -15,9 +15,12 @@ module CampAdmin
                                    .order("#{sort_column} #{sort_direction}")
                                    .page(params[:page])
 
+
+      result = CsvData.call(klass_obj: Camplocation.all)
+      csv_data = result.success? ? result.csv_data : nil
       respond_to do |format|
         format.html
-        format.csv { send_data Camplocation.to_csv }
+        format.csv { send_data csv_data }
       end
     end
 

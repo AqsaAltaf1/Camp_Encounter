@@ -6,7 +6,7 @@ module CampAdmin
   class LocationsController < ApplicationController
     before_action :set_location, only: %i[edit show update destroy intro]
     before_action :authenticate_user!, except: %i[index show]
-    before_action :location_autherization, except: %i[show active_camp intro]
+    before_action :location_autherization, except: %i[show active_camp intro indexs]
 
     def index
       @locations = Location.all.page(params[:page])

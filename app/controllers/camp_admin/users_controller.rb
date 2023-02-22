@@ -11,9 +11,11 @@ module CampAdmin
                    .order("#{sort_column} #{sort_direction}")
                    .page(params[:page])
 
+      result = CsvData.call(klass_obj: User.all)
+      csv_data = result.success? ? result.csv_data : nil
       respond_to do |format|
         format.html
-        format.csv { send_data User.to_csv }
+        format.csv { send_data csv_data }
       end
     end
 
