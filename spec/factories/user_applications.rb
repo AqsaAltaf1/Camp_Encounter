@@ -9,6 +9,8 @@ FactoryBot.define do
     first_name {'aqsa'}
     last_name {'altaf'}
     email {'aqsaaltaf01@gmail.com'}
+    # user_id {12}
+    # location_id {13}
 
   end
 end

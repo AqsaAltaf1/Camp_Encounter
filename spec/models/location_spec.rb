@@ -8,4 +8,8 @@ RSpec.describe Location, type: :model do
       expect(location.valid?).to be_truthy
     end
   end
+
+  context 'associations' do
+      it { should have_many(:user_applications) }
+  end
 end

@@ -1,19 +1,21 @@
 {
   "RSpec": {
     "coverage": {
-      "/home/aqsa/Documents/Camp_Encounter/spec/models/user_spec.rb": {
+      "/home/aqsa/Documents/Camp_Encounter/spec/models/location_spec.rb": {
         "lines": [
           1,
           null,
           1,
           1,
-          1,
+          2,
           null,
           1,
           1,
-          0,
           null,
           null,
+          null,
+          1,
+          2,
           null,
           null
         ]
@@ -82,6 +84,12 @@
           null,
           1,
           null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
           null,
           null
         ]
@@ -697,17 +705,52 @@
           null
         ]
       },
+      "/home/aqsa/Documents/Camp_Encounter/spec/factories/locations.rb": {
+        "lines": [
+          1,
+          1,
+          2,
+          2,
+          2,
+          2,
+          null,
+          null,
+          null
+        ]
+      },
+      "/home/aqsa/Documents/Camp_Encounter/spec/factories/user_applications.rb": {
+        "lines": [
+          1,
+          1,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
       "/home/aqsa/Documents/Camp_Encounter/spec/factories/users.rb": {
         "lines": [
           1,
           1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          null,
           null,
           null
         ]
@@ -778,18 +821,6 @@
           1,
           0,
           null,
-          0,
-          0,
-          null,
-          0,
-          0,
-          null,
-          null,
-          null,
-          null,
-          1,
-          0,
-          null,
           null,
           1,
           0,
@@ -850,8 +881,99 @@
           null,
           null
         ]
+      },
+      "/home/aqsa/Documents/Camp_Encounter/app/models/location.rb": {
+        "lines": [
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          null,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/home/aqsa/Documents/Camp_Encounter/spec/models/user_application_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          2,
+          1,
+          1,
+          null,
+          null,
+          null,
+          1,
+          2,
+          2,
+          null,
+          null,
+          null
+        ]
+      },
+      "/home/aqsa/Documents/Camp_Encounter/app/models/user_application.rb": {
+        "lines": [
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "/home/aqsa/Documents/Camp_Encounter/spec/models/user_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          2,
+          null,
+          1,
+          1,
+          null,
+          2,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
       }
     },
-    "timestamp": 1677232198
+    "timestamp": 1677240002
   }
 }

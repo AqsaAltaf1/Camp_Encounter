@@ -7,7 +7,7 @@ RSpec.describe User, type: :model do
     it 'it should valid user with all attributes' do
       expect(user.valid?).to be_truthy
     end
-
+    it { should have_one(:user_application)}
 
     # it "password format should be valid" do
     #   user = User.new(email: "test@example.com", password: "Password123")
@@ -21,25 +21,17 @@ RSpec.describe User, type: :model do
     # end
 
     # it "user should create client" do
-    #   client = Client.create(first_name: "ali")
-    #   expect(client.persisted?).to be_truthy
+    #   expect(user).not_to be_Client
     # end
 
-    # it "user should create superAdmin" d
-    #   admin = Admin.create(first_name: "ali")
-    #   expect(admin.persisted?).to be_truthy
+    # it "user should create client" do
+    #   expect(user).to be_Admin
     # end
 
-    # it "user should create Admin" do
-    #   superAdmin = SuperAdmin.create(first_name: "ali")
-    #   expect(superAdmin.persisted?).to be_truthy
-
+    # it "user should create client" do
+    #   expect(user).to be_SuperAdmin
     # end
 
-    # it "user should not create user without name" do
-    #   user = User.create(type: "client")
-    #   expect(client.persisted?).to be_falsy
-    # end
 
   end
 end
