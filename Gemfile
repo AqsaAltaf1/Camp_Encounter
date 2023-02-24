@@ -79,3 +79,4 @@ gem 'wicked'
 gem 'devise_invitable', '~> 2.0.0'
 gem 'faker'
 gem 'interactor-rails'
+gem 'simplecov', require: false, group: :test
