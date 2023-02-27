@@ -4,6 +4,5 @@ FactoryBot.define do
     camp_location {'lahore'}
     start_date { DateTime.now }
     end_date {'20 March 2023'}
-
   end
 end

@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/home/aqsa/Documents/Camp_Encounter/spec/models/location_spec.rb": {
+      "/home/aqsa/Documents/Camp_Encounter/spec/models/camplocation_spec.rb": {
         "lines": [
           1,
           null,
@@ -13,9 +13,6 @@
           1,
           null,
           null,
-          null,
-          1,
-          2,
           null,
           null
         ]
@@ -705,6 +702,15 @@
           null
         ]
       },
+      "/home/aqsa/Documents/Camp_Encounter/spec/factories/camplocations.rb": {
+        "lines": [
+          1,
+          1,
+          2,
+          null,
+          null
+        ]
+      },
       "/home/aqsa/Documents/Camp_Encounter/spec/factories/locations.rb": {
         "lines": [
           1,
@@ -713,7 +719,6 @@
           2,
           2,
           2,
-          null,
           null,
           null
         ]
@@ -732,9 +737,6 @@
           2,
           2,
           null,
-          null,
-          null,
-          null,
           null
         ]
       },
@@ -750,7 +752,6 @@
           2,
           2,
           2,
-          null,
           null,
           null
         ]
@@ -882,6 +883,36 @@
           null
         ]
       },
+      "/home/aqsa/Documents/Camp_Encounter/app/models/camplocation.rb": {
+        "lines": [
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "/home/aqsa/Documents/Camp_Encounter/spec/models/location_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          2,
+          null,
+          1,
+          1,
+          null,
+          null,
+          null,
+          1,
+          2,
+          null,
+          null
+        ]
+      },
       "/home/aqsa/Documents/Camp_Encounter/app/models/location.rb": {
         "lines": [
           null,
@@ -974,6 +1005,6 @@
         ]
       }
     },
-    "timestamp": 1677240002
+    "timestamp": 1677476916
   }
 }
