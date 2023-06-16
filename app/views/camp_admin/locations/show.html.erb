@@ -1,0 +1,25 @@
+<div class="container  mt-3">
+  <div class="mx-auto shadow p-3 mb-5 bg-body rounded">
+    <h1>show here</h1>
+    <table class='table table-striped table-hover'>
+      <thead class='p-3 mb-2 bg-success'>
+        <tr>
+        <th> Title </th>
+        <th> Camp_Locations</th>
+        <th> Status </th>
+        <th> Start date</th>
+        <th> End date</th>
+      </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><%= @location.title %></td>
+          <td><%= @location.camp_location %></td>
+          <td><%= @location.status %></td>
+          <td><%= @location.start_date %></td>
+          <td><%= @location.end_date %></td>
+        </tr>
+      </tbody>
+  </div>
+</div>
+
