@@ -15,6 +15,7 @@ Rails.application.routes.draw do
         get 'profile'
       end
     end
+    resources :user_applications
   end
 
   namespace :camp_admin, path: 'admin' do
