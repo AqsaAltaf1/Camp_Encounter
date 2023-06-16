@@ -34,7 +34,7 @@ module CampAdmin
     def destroy
       return unless @user.destroy
 
-      redirect_to admin_users_path
+      redirect_to camp_admin_users_path
     end
 
     private
