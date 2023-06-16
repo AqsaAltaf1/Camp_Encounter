@@ -20,10 +20,12 @@ module Users
     # end
 
     # protected
-
     # If you have extra params to permit, append them to the sanitizer.
     # def configure_sign_in_params
     #   devise_parameter_sanitizer.permit(:sign_in, keys: [:attribute])
     # end
+    def after_sign_in_path_for(resource)
+       current_user&.client?? active_camp_camp_admin_location_path(current_user): root_path
+    end
   end
 end
