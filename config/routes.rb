@@ -32,9 +32,6 @@ Rails.application.routes.draw do
 
   namespace :camp_admin, path: 'admin' do
     resources :camp_step do
-      member do
-        get 'personal_info'
-      end
     end
   end
 end

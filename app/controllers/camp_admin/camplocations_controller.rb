@@ -27,7 +27,9 @@ module CampAdmin
     end
 
     def create
-      if @camplocation.create(camp_params)
+      @camplocation = Camplocation.new(camp_params)
+
+      if @camplocation.save!
         redirect_to camp_admin_camplocations_path
       else
         render :new, status: :unprocessable_entity
