@@ -21,11 +21,20 @@ Rails.application.routes.draw do
     resources :locations do
       member do
         get 'active_camp'
+        get 'intro'
       end
     end
   end
 
   namespace :camp_admin, path: 'admin' do
     resources :camplocations
+  end
+
+  namespace :camp_admin, path: 'admin' do
+    resources :camp_step do
+      member do
+        get 'personal_info'
+      end
+    end
   end
 end
