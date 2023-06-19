@@ -5,7 +5,9 @@
 <div class="container mt-4">
   <div class="col-md-6 mx-auto shadow p-5 mt-5  mb-5 bg-body rounded">
     <h1>Second step</h1>
-    <%= form_for current_user, url: wizard_path do |f| %>
+    <%= form_for @user_application || current_user.user_application, url: wizard_path do |f| %>
+    <% val = @user_application || current_user.user_application %>
+    <%= hidden_field_tag :user_application_id, val.id %>
     <div class="mt-2">
       <p class="text-start"> i agree term and conditions</p>
       <div class="row mt-2">

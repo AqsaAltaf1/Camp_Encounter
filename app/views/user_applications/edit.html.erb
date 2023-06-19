@@ -1,19 +1,15 @@
-<%= "Step #{@current_step} of #{@total_steps}" %>
-<div class="progress">
-  <div class="progress-bar bg-success" role="progressbar" style="width: 20%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
-</div>
-<div class="container mt-4">
+<div class="container mt-3">
   <div class="col-md-6 mx-auto shadow p-5 mb-5 bg-body rounded">
-    <h1>Personal Information</h1>
-    <%= form_for current_user, url: wizard_path do |f| %>
+   <h3>Edit here</h3>
+   <%= form_with model: @user_application, url: user_application_path(@user_application),     method: :patch, local: true do |f| %>
       <div class="row mt-2">
-        <div class="col">
+        <div class='col'>
           <%= f.label :FirstName %><br />
-          <%= f.text_field :first_name, autofocus: true, autocomplete: "first_name", class: "form-control"%>
+          <%= f.text_field :first_name,  class: "form-control"%>
         </div>
         <div class="col">
           <%= f.label :LastName %><br />
-          <%= f.text_field :last_name, autofocus: true, autocomplete: "LastName", class: "form-control" %>
+          <%= f.text_field :last_name, class: "form-control" %>
         </div>
       </div>
 
@@ -27,11 +23,11 @@
           <%= f.label :Current_age %>
           <%= f.text_field :Current_age, class: 'form-control' %>
         </div>
-     </div>
+      </div>
 
       <div class="row mt-2">
         <%= f.label :email%><br />
-        <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %>
+        <%= f.email_field :email, class: "form-control" %>
       </div>
 
       <div class="row mt-2">
@@ -55,13 +51,8 @@
         <%= f.file_field :image, autofocus: true, autocomplete:'image',class:'form-control' %>
       </div>
 
-      <div class="row mt-2">
-        <div class='col'>
-          <%= f.submit "submit", class: 'btn btn-success personal-btn' %>
-        </div>
-        <div class='col'>
-          <%= link_to 'skip', next_wizard_path, class: 'btn btn-success personal-btn' %>
-        </div>
+      <div class="col">
+        <%= f.submit "Update", class: 'btn btn-success mb-3 btn-md mt-3' %>
       </div>
     <% end %>
   </div>

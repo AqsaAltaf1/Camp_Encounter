@@ -1,0 +1,25 @@
+<div class='container col-md-6 mx-auto shadow p-3 mb-5 bg-body rounded mt-3'>
+  <h3>View Here</h3>
+  <div class='view'>
+    <div>
+      <ul class='list1'>
+        <li><b>FirstName:</b></li><hr>
+        <li><b>LastName:</b></li><hr>
+        <li><b>Email Address:</b></li><hr>
+        <li><b>Gender</b></li><hr>
+        <li><b>Date of Birth</b></li><hr>
+        <li><b>Current Age</b></li><hr>
+      </ul>
+    </div>
+    <div>
+      <ul class='list2'>
+        <li><%= @user_application.first_name %></li><hr>
+        <li><%= @user_application.last_name %></li><hr>
+        <li><%= @user_application.email %></li><hr>
+        <li><%= @user_application.Gender %></li><hr>
+        <li><%= @user_application.Date_of_birth %></li><hr>
+        <li><%= @user_application.Current_age %></li><hr>
+      <ul>
+    </div>
+  </div>
+</div>

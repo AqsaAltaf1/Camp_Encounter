@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", function() {
   var myLink = document.getElementById('pop');
   myLink.addEventListener("click", function(event){
     event.preventDefault();
-    if (confirm("Do you want to proceed?")) {
+    if (confirm("You will not be able to edit once confirmed?")) {
       window.location.href ='/';
     }
   });

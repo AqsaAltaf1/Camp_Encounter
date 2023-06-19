@@ -5,6 +5,7 @@ module CampAdmin
   # comment
   class LocationsController < ApplicationController
     before_action :set_location, only: %i[edit show update destroy intro]
+    before_action :authenticate_user!, except: %i[index show]
 
     def index
       @locations = Location.all.page(params[:page])
@@ -34,6 +35,7 @@ module CampAdmin
 
     def create
       @location = Location.new(location_params)
+      autherize @location
 
       if @location.save!
         redirect_to camp_admin_locations_path
