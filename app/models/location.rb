@@ -4,6 +4,7 @@
 class Location < ApplicationRecord
   validate :end_must_be_after_start
   paginates_per 5
+  has_many :users
 
   enum status: { inactive: 0, active: 1 }
 
