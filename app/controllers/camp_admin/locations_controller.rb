@@ -35,7 +35,7 @@ module CampAdmin
 
     def create
       @location = Location.new(location_params)
-      autherize @location
+      authorize @location
 
       if @location.save!
         redirect_to camp_admin_locations_path

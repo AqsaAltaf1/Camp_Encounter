@@ -1,8 +1,8 @@
-class CamplocationPolicy < ApplicationPolicy
-  attr_reader :user, :location
+# class CamplocationPolicy < ApplicationPolicy
+#   attr_reader :user, :location
 
-  def initialize(user, camplocation)
-    @user = user
-    @camplocation = camplocation
-  end
-end
+#   def initialize(user, camplocation)
+#     @user = user
+#     @camplocation = camplocation
+#   end
+# end

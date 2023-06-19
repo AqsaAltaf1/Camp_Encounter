@@ -5,7 +5,6 @@ require 'csv'
 # user
 class User < ApplicationRecord
   paginates_per 3
-  has_one_attached :image, :dependent => :destroy
   has_one :user_application
 
 
