@@ -4,12 +4,11 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <div class='col-auto paths'>
         <% if current_user %>
-        <%= link_to 'Sign out', destroy_user_session_path, method: :delete, class: 'links' %>
-        <%= link_to 'Profile', profile_camp_admin_user_path(current_user),  class:'links' %>
-        <%= link_to 'Camps', active_camp_camp_admin_location_path(current_user) %>
+          <%= link_to 'Sign out', destroy_user_session_path, method: :delete, class: 'links' %>
+          <%= link_to 'Profile', profile_camp_admin_user_path(current_user),  class:'links' %>
         <% else %>
-        <%= link_to 'Register', new_user_registration_path ,class: 'links' %>
-        <%= link_to 'Sign in', new_user_session_path ,class: 'links' %>
+          <%= link_to 'Register', new_user_registration_path ,class: 'links' %>
+          <%= link_to 'Sign in', new_user_session_path ,class: 'links' %>
         <% end %>
       </div>
     </div>

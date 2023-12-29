@@ -15,17 +15,24 @@ Rails.application.routes.draw do
         get 'profile'
       end
     end
+    resources :user_applications
   end
 
   namespace :camp_admin, path: 'admin' do
     resources :locations do
       member do
         get 'active_camp'
+        get 'intro'
       end
     end
   end
 
   namespace :camp_admin, path: 'admin' do
     resources :camplocations
+  end
+
+  namespace :camp_admin, path: 'admin' do
+    resources :camp_step do
+    end
   end
 end

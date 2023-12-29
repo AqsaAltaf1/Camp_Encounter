@@ -1,0 +1,36 @@
+<%= "Step #{@current_step} of #{@total_steps}" %>
+<div class="progress">
+  <div class="progress-bar bg-success" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+</div>
+<div class="container ">
+  <div class="col-md-6 mx-auto shadow p-4  mt-5 mb-5 bg-body rounded">
+    <%= form_for @user_application || current_user.user_application, url: wizard_path do |f| %>
+      <% val = @user_application || current_user.user_application %>
+      <%= hidden_field_tag :user_application_id, val.id %>
+      <h1>Fifth step</h1>
+      <div class="mt-2">
+        <p class="text-start"> i will participate with joy.</p>
+        <div>
+          <%= f.check_box :agreement, id: "my_checkbox", class: "form-check-input", checked_value: "yes", unchecked_value: "no" %>
+          <%= f.label :checkbox_field, "Yes" %>
+        </div>
+        <div>
+          <%= f.check_box :agreement, id: "my_checkbox", class: "form-check-input", checked_value: "yes", unchecked_value: "no" %>
+          <%= f.label :checkbox_field, "NO" %>
+        </div>
+      </div>
+
+      <div class="row mt-2">
+        <div class='col'>
+          <%= link_to "Back", previous_wizard_path, class: 'btn btn-success personal-btn' %>
+        </div>
+        <div class='col'>
+          <%= f.submit "submit", class: 'btn btn-success personal-btn' %>
+        </div>
+        <div class='col'>
+          <%= link_to 'skip', next_wizard_path, class: 'btn btn-success personal-btn' %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

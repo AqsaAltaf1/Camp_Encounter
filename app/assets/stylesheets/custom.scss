@@ -1,0 +1,41 @@
+.introduction .button{
+  margin-left:500px;
+}
+.personal-btn {
+  border-radius:20px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 20px;
+  text-decoration: none;
+}
+
+.personal-btn:hover {
+  background:green;
+  text-decoration: none;
+}
+.control-me {
+  display: none;
+}
+
+#toggle:checked ~ .control-me {
+  display: block;
+}
+
+
+.progress {
+  height: 20px;
+  margin-bottom: 20px;
+  background-color: #f5f5f5;
+  border-radius: 4px;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.progress-bar {
+  height: 20px;
+  line-height: 20px;
+  color: #fff;
+  text-align: center;
+  background-color: #3335b7;
+  box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.15);
+  transition: width 0.6s ease;
+}

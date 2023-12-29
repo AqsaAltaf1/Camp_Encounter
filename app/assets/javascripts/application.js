@@ -22,3 +22,13 @@
 $(document).ready(function () {
   $("#user_type").addClass("form-select")
 });
+
+document.addEventListener("DOMContentLoaded", function() {
+  var myLink = document.getElementById('pop');
+  myLink.addEventListener("click", function(event){
+    event.preventDefault();
+    if (confirm("You will not be able to edit once confirmed?")) {
+      window.location.href ='/';
+    }
+  });
+})

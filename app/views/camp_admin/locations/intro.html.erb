@@ -1,0 +1,25 @@
+<div class='introduction'>
+	<p class="text-start">
+		Welcome and thank you for applying to be a participant at <b>
+		<%= @location.camp_location %> </b>.
+		<b> <%= @location.camp_location %> </b>
+		is an international programme for students ages 14 to 17 from around the world which takes place in partnership.<br/><br/>
+		The purpose of this application is for the
+		<b> <%= @location.camp_location %> </b>
+		 Placement Team to get to know you and learn about your interests, passions, and motivations for registering. Before registering, we encourage you to visit our website and learn more about our offerings and the registration process.<br/><br/>
+		This registration form is for both CONNECT camps that will take place during July 2022:<br/>
+				<b> <%= @location.camp_location %> </b> Cycle A: 1:30 AM GMT to 7:30 AM GMT<br/>
+				<b> <%= @location.camp_location %> </b> Cycle B: 11:30 AM GMT to 5:30 PM GMT<br/>
+		If you have any questions during the application process, please feel free to email  at <a href='#'>info@projectname.com</a>.<br/><br/>
+		<%= check_box_tag '', 'yes'%>
+		I AKNOWLEDGE AND AGREE THAT ANY INFORMATION PROVIDED IN THIS APPLICATION WILL BE COLLECTED AND PROCESSED IN ACCORDANCE WITH THE <a href='#'>PRIVACY POLICY </a>.
+	</p>
+	<% if @location.end_date < Date.today %>
+		<p class='text-danger'>
+			<%= flash.alert = "please participate in next camp." %>
+		</p>
+	<% else %>
+		<%= link_to 'Start Camp',new_camp_admin_user_application_path(location_id: @location ) ,class: 'btn btn-success button' %>
+	<% end %>
+</div>
+
