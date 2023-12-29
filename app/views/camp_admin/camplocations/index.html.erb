@@ -4,7 +4,7 @@
     <%= form_tag(camp_admin_camplocations_path, method: "get") do %>
       <%= label_tag(:p, "") %>
       <%= text_field_tag(:p) %>
-      <%= submit_tag("Search", class:"btn btn-outline-success btn-sm") %>
+      <%= submit_tag("Search", class:"btn btn-outline-success btn-sm mt-2") %>
     <% end %>
   </div>
   <div class='col'>
@@ -15,22 +15,23 @@
   </div>
 </div>
   <div class='col'>
-  <table class='table table-striped table-hover mt-3 pretty'>
-    <thead class='p-3 mb-2 bg-success pretty'>
+    <table class='table table-striped table-hover mt-3 pretty'>
+      <thead class='p-3 mb-2 bg-success pretty'>
         <tr>
-        <th><%= sortable "title"%></th>
-        <th  colspan="2">Actions</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% @camplocations.each do |camplocation| %>
-        <tr>
-          <td><%= camplocation.title %></td>
-          <td><%= link_to 'Edit', edit_camp_admin_camplocation_path(camplocation) %></td>
-          <td><%= link_to 'Destroy',camp_admin_camplocation_path(camplocation), data: { confirm: 'Are you sure?' }, method: :delete %></td>
+          <th><%= sortable "title"%></th>
+          <th  colspan="2">Actions</th>
         </tr>
-      <% end %>
-    </tbody>
-  </table>
-   <%= paginate @camplocations %>
+      </thead>
+      <tbody>
+        <% @camplocations.each do |camplocation| %>
+          <tr>
+            <td><%= camplocation.title %></td>
+            <td><%= link_to 'Edit', edit_camp_admin_camplocation_path(camplocation) %></td>
+            <td><%= link_to 'Destroy',camp_admin_camplocation_path(camplocation), data: { confirm: 'Are you sure?' }, method: :delete %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+  <%= paginate @camplocations %>
 </div>

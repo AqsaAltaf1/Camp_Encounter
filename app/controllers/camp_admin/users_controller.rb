@@ -6,12 +6,10 @@ module CampAdmin
     before_action :set_user, only: %i[edit update destroy show]
     helper_method :sort_column, :sort_direction
 
-    def edit; end
-
     def index
       @users = User.search(params[:q])
-      .order("#{sort_column} #{sort_direction}")
-      .page(params[:page])
+                   .order("#{sort_column} #{sort_direction}")
+                   .page(params[:page])
 
       respond_to do |format|
         format.html
@@ -21,13 +19,13 @@ module CampAdmin
 
     def show; end
 
-    def profile; end
+    def edit; end
 
     def update
       if @user.update(user_params)
-        redirect_to camp_admin_user_path
+        redirect_to camp_admin_user_path, notice: "Your profile has been updated"
       else
-        render 'edit'
+        render 'edit', notice: "Something went wrong"
       end
     end
 
@@ -36,6 +34,8 @@ module CampAdmin
 
       redirect_to camp_admin_users_path
     end
+
+    def profile; end
 
     private
 

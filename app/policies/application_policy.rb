@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# comment
 class ApplicationPolicy
   attr_reader :user, :record
 
@@ -13,7 +14,7 @@ class ApplicationPolicy
   end
 
   def show?
-    false
+    index?
   end
 
   def create?
@@ -25,17 +26,18 @@ class ApplicationPolicy
   end
 
   def update?
-    user.admin?
+    create?
   end
 
   def edit?
-    update?
+    create?
   end
 
   def destroy?
-    user.admin?
+    create?
   end
 
+  # comment
   class Scope
     def initialize(user, scope)
       @user = user

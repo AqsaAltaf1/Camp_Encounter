@@ -9,6 +9,46 @@ module CampAdmin
 
     def index
       @locations = Location.all.page(params[:page])
+      authorize([:camp_admin, @location])
+    end
+
+    def show; end
+
+    def new
+      @location = Location.new
+      authorize([:camp_admin, @location])
+    end
+
+    def edit
+      authorize([:camp_admin, @location])
+    end
+
+    def create
+      authorize([:camp_admin, @location])
+      @location = Location.new(location_params)
+      authorize @location
+
+      if @location.save!
+        redirect_to camp_admin_locations_path, notice: "Your location has been saved"
+      else
+        render :new, status: :unprocessable_entity
+      end
+    end
+
+    def update
+      authorize([:camp_admin, @location])
+      if @location.update(location_params)
+        redirect_to camp_admin_location_path, notice: "Your location has been updated"
+      else
+        render 'edit', notice: "Something went wrong"
+      end
+    end
+
+    def destroy
+      authorize([:camp_admin, @location])
+      return unless @location.destroy
+
+      redirect_to camp_admin_locations_path
     end
 
     def active_camp
@@ -16,39 +56,6 @@ module CampAdmin
     end
 
     def intro; end
-
-    def show; end
-
-    def edit; end
-
-    def new
-      @location = Location.new
-    end
-
-    def update
-      if @location.update(location_params)
-        redirect_to camp_admin_location_path
-      else
-        render 'edit'
-      end
-    end
-
-    def create
-      @location = Location.new(location_params)
-      autherize @location
-
-      if @location.save!
-        redirect_to camp_admin_locations_path
-      else
-        render :new, status: :unprocessable_entity
-      end
-    end
-
-    def destroy
-      return unless @location.destroy
-
-      redirect_to camp_admin_locations_path
-    end
 
     private
 
