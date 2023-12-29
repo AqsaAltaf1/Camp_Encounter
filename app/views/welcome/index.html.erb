@@ -1,6 +1,48 @@
 <div class='row mt-5'>
   <% if current_user&.admin? %>
-    <h1>Welcome Admin </h1>
+   <h1>Welcome Admin </h1>
+    <div class="row">
+      <div class="col-sm-6">
+        <div class="card">
+          <div class="card-body">
+            <div class="card-header text-white bg-success">
+              <h4 class="card-title text-center">Total Users</h4>
+            </div>
+            <p class="card-text mt-3"> Users <%= Client.count %></p>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="card">
+          <div class="card-body">
+            <div class="card-header text-white bg-success">
+              <h4 class="card-title text-center">Total Camplocations</h4>
+            </div>
+            <p class="card-text mt-3">Camplocations <%= Camplocation.count %></p>
+          </div>
+        </div>
+      </div>
+       <div class="col-sm-6">
+        <div class="card mt-5">
+          <div class="card-body">
+            <div class="card-header text-white bg-success">
+             <h4 class="card-title text-center">Total Locations</h4>
+            </div>
+            <p class="card-text mt-3">Locations <%= Location.count %></p>
+          </div>
+        </div>
+      </div>
+       <div class="col-sm-6">
+        <div class="card mt-5">
+          <div class="card-body">
+            <div class="card-header text-white bg-success">
+              <h4 class="card-title text-center">Total Camp Applications</h4>
+            </div>
+            <p class="card-text mt-3">Camp Applications <%= UserApplication.count %></p>
+          </div>
+        </div>
+      </div>
+   </div>
   <% elsif current_user&.client? && current_user.user_application.present? %>
     <h1>Congratulations <%= current_user&.first_name%> <%= current_user&.last_name%> you have submitted successfully </h1>
     <div class='col'>

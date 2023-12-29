@@ -6,27 +6,22 @@ module CampAdmin
   class LocationsController < ApplicationController
     before_action :set_location, only: %i[edit show update destroy intro]
     before_action :authenticate_user!, except: %i[index show]
+    before_action :location_autherization, except: %i[show active_camp intro]
 
     def index
       @locations = Location.all.page(params[:page])
-      authorize([:camp_admin, @location])
     end
 
     def show; end
 
     def new
       @location = Location.new
-      authorize([:camp_admin, @location])
     end
 
-    def edit
-      authorize([:camp_admin, @location])
-    end
+    def edit; end
 
     def create
-      authorize([:camp_admin, @location])
       @location = Location.new(location_params)
-      authorize @location
 
       if @location.save!
         redirect_to camp_admin_locations_path, notice: "Your location has been saved"
@@ -36,7 +31,6 @@ module CampAdmin
     end
 
     def update
-      authorize([:camp_admin, @location])
       if @location.update(location_params)
         redirect_to camp_admin_location_path, notice: "Your location has been updated"
       else
@@ -45,7 +39,6 @@ module CampAdmin
     end
 
     def destroy
-      authorize([:camp_admin, @location])
       return unless @location.destroy
 
       redirect_to camp_admin_locations_path
@@ -65,6 +58,10 @@ module CampAdmin
 
     def set_location
       @location = Location.find(params[:id])
+    end
+
+    def location_autherization
+      authorize([:camp_admin,Location])
     end
   end
 end

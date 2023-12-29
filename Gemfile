@@ -71,3 +71,5 @@ gem 'kaminari'
 gem 'letter_opener', group: :development
 gem 'pundit'
 gem 'wicked'
+
+gem 'devise_invitable', '~> 2.0.0'

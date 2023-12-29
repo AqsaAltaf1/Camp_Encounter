@@ -12,7 +12,7 @@ class User < ApplicationRecord
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
-  devise :database_authenticatable, :registerable,:recoverable, :rememberable, :validatable, :confirmable
+  devise :invitable, :database_authenticatable, :registerable,:recoverable, :rememberable, :validatable, :confirmable
 
   validates :first_name, :last_name, presence: true
   validates :phone_number, presence: true, numericality: { only_integer: true }
@@ -26,7 +26,6 @@ class User < ApplicationRecord
       csv << attributes
 
       all.each do |user|
-        # csv << attributes.map { |attr| user.send(attr) }
         csv << user.attributes.values
       end
     end
