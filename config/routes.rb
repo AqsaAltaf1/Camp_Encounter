@@ -2,6 +2,8 @@
 
 Rails.application.routes.draw do
   root 'welcome#index'
+  resources :camp_step
+  resources :user_applications
 
   devise_for :users, controllers: {
     sessions: 'users/sessions',
@@ -15,7 +17,6 @@ Rails.application.routes.draw do
         get 'profile'
       end
     end
-    resources :user_applications
   end
 
   namespace :camp_admin, path: 'admin' do
@@ -29,10 +30,5 @@ Rails.application.routes.draw do
 
   namespace :camp_admin, path: 'admin' do
     resources :camplocations
-  end
-
-  namespace :camp_admin, path: 'admin' do
-    resources :camp_step do
-    end
   end
 end

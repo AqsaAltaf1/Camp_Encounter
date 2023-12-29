@@ -5,22 +5,24 @@
 <div class="container mt-4">
   <div class="col-md-6 mx-auto shadow p-5 mb-5 bg-body rounded">
     <h1>Personal Information</h1>
-    <%= form_for [:camp_admin, @user_application] do |f| %>
+    <% user_application = @user_application || current_user.user_application %>
+    <%= form_for user_application, url: wizard_path do |f| %>
+      <%= hidden_field_tag :user_application_id, user_application.id %>
       <div class="row mt-2">
         <div class="col">
           <%= f.label :FirstName %><br />
-          <%= f.text_field :first_name, autofocus: true, autocomplete: "first_name", class: "form-control"%>
+          <%= f.text_field :first_name, value: current_user.first_name,  class: "form-control"%>
         </div>
         <div class="col">
           <%= f.label :LastName %><br />
-          <%= f.text_field :last_name, autofocus: true, autocomplete: "LastName", class: "form-control" %>
+          <%= f.text_field :last_name, value: current_user.last_name, class: "form-control" %>
         </div>
       </div>
 
       <div class="row mt-2">
         <div class="col">
           <%= f.label :Date_of_birth %><br/>
-          <%= f.date_select :Date_of_birth, start_year: Date.today.year - 100, end_year: Date.today.year, class: 'form-control' %>
+          <%= f.datetime_field :Date_of_birth, start_year: Date.today.year - 100, end_year: Date.today.year, class: 'form-control' %>
         </div>
 
         <div class="col">
@@ -31,7 +33,7 @@
 
       <div class="row mt-2">
         <%= f.label :email%><br />
-        <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %>
+        <%= f.email_field :email, value: current_user.email, class: "form-control" %>
       </div>
 
       <div class="row mt-2">
@@ -51,8 +53,8 @@
       </div>
 
       <div class="row mt-2">
-        <%#= f.label :Profile_image %>
-        <%#= f.file_field :image, autofocus: true, autocomplete:'image',class:'form-control' %>
+        <%= f.label :Profile_image %>
+        <%= f.file_field :image, autofocus: true, autocomplete:'image',class:'form-control' %>
       </div>
 
       <div class="row mt-2">

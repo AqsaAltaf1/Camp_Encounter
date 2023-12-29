@@ -13,7 +13,6 @@ class Camplocation < ApplicationRecord
       csv << attributes
 
       all.each do |camp|
-        # csv << attributes.map { |attr| user.send(attr) }
         csv << camp.attributes.values
       end
     end

@@ -3,7 +3,8 @@
     <% total_fields = current_user.user_application.attributes.count %>
     <% filled_fields = current_user.user_application.attributes.values.reject(&:nil?).count %>
     <% percentage_filled = (filled_fields.to_f / total_fields.to_f) * 100 %>
-    <h3>You have completed  <%= percentage_filled.round %> % of your application.</h3>
+    <% percentage = percentage_filled.round %>
+    <h3>You have completed  <%= percentage %> % of your application.</h3>
     <p class='text-start'>Hello <%= current_user.first_name%><br/>
       Thank you for registered here.<br/><br/>
       This is your personal dashboard.You can see here the infomartion of your registration,<br/>
@@ -11,7 +12,7 @@
       <% if percentage_filled.round == 100 %>
         <%= link_to 'Confirm',root_path ,class: 'btn btn-success button mt-2', id:'pop' %>
       <% else %>
-        <%= link_to 'Continue to Complete your Application',camp_admin_camp_step_index_path ,class: 'btn btn-success button mt-2' %>
+        <%= link_to 'Continue to Complete your Application',camp_step_index_path ,class: 'btn btn-success button mt-2' %>
       <% end %>
     </p>
   </div>
